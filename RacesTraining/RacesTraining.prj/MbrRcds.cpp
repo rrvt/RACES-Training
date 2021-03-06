@@ -5,6 +5,7 @@
 #include "MbrRcds.h"
 #include "CSVrcds.h"
 #include "Maps.h"
+#include "TrnNeeded.h"
 
 
 MbrRcds mbrRcds;
@@ -222,6 +223,9 @@ int          i;
 TrainingRcd* trn;
 String       fcc;
 
+  legacy.clear();
+  nonRspdrs.clear();
+
   notePad.clear();   notePad << nClrTabs << nSetTab(10) << nSetTab(37) << nSetTab(47);
   notePad << nTab << nTab << nTab << _T("Responder") << nCrlf;
   notePad << _T("FCC") << nTab << _T("Name") << nTab << _T("Status") << nTab << _T("% Complete") << nCrlf;
@@ -279,6 +283,8 @@ String       fcc;
 
     if (status == _T("Fmr")) continue;
 
+    if (!dbRspdr) nonRspdrs.addNeeded(trn);
+
     if (trnBdgOK && !badgeOK) {
       dsplyData(trn, status, count);
       notePad << nTab << _T("Badge is OK according to Training Records") << nCrlf;
@@ -298,6 +304,7 @@ String       fcc;
       if (!rspdrOK) {
         dsplyData(trn, status, count);
         notePad << nTab << _T("Legacy Responder, training records incomplete") << nCrlf;
+        legacy.addNeeded(trn);
         }
       if (!dbRspdr) {
         dsplyData(trn, status, count);

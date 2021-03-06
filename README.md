@@ -78,6 +78,13 @@ The WiX Toolset must be installed in Visual Studio.
 
 WixApp was used to create the installer Product file.
 
+## Updates
+### Update 3/6/21
+
+Added two additional features:
+  o Display bar graph depicting the training needed for Legacy Responders
+  o Display bar graph depicting the training needed for Non-Responders
+
 ## Authors
 
 Robert R. Van Tuyl

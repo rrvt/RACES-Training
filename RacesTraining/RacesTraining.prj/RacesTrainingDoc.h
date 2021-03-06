@@ -47,6 +47,8 @@ public:
   afx_msg void onLoadTrainingCSVfile();
   afx_msg void OnInfoByName();
   afx_msg void OnInfoByFCC();
-  afx_msg void onUpload();
+  afx_msg void onComparison();
+  afx_msg void onLegacyNeeded();
+  afx_msg void onNonRspdrNeeded();
   afx_msg void OnOptions();
   };

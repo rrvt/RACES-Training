@@ -131,6 +131,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="..\..\Library\Extras\TblList.h" />
     <ClInclude Include="TrainingRcd.h" />
+    <ClInclude Include="TrnNeeded.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Library\Extras\About.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="..\..\Library\Extras\TblList.cpp" />
     <ClCompile Include="TrainingRcd.cpp" />
+    <ClCompile Include="TrnNeeded.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="RacesTraining.rc" />
