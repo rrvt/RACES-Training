@@ -1,0 +1,64 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/OneColumnPage.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>RACES Training</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<link href="App.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div class="container">
+<div class="content">
+<!-- InstanceBeginEditable name="Title" -->
+<h1>RACES Training</h1>
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Body" -->
+<h2>Introduction</h2>
+<p>
+RACES Training's purpose is to compare the RACES Training Spreadsheet (google sheet) to the RACES 
+database (MS Access database).  It reports the discrepancies between the two sets of data and
+attempts to alert the user of updates that need to be made in the database.  Here is the list
+of comparisons made for each user in the training spreadsheet:
+</p>
+<ul>
+<li>Badge Training completed and BadgeOK not set in database</li>
+<li>Badge Training not completed and BadgeOK set in database</li>
+<li>
+Spreadsheet has no responder date and Responder Training not completed but marked as a responder in the database
+</li>
+<li>Spreadsheet has a responder date and the Responder Training not completed</li>
+<li>
+Spreadsheet has a responder date and the database is not marked as a responder
+Responder Training has been completed but the database is not marked as a responder
+</li>
+</ul>
+<p>
+In addition to a message about each of these differences the percentage completion of the 
+Responder training is computed and output.  It is based only on a count of the number of items
+completed in the set of 16 items.
+</p>
+<p>
+See the Operations Page for details of each operation.  Once a database has been opened it is
+automatically opened when the application is started.  There is a button to change the database
+to open.  The spreadsheet exists on the web and a csv file may be downloaded from it.  This
+csv file is then loaded into the application.  There is a command to perform the comparison and
+it may be printed using the print command.
+</p>
+
+
+
+
+
+</ul>
+
+<!-- InstanceEndEditable -->
+</div><!-- end .content -->
+</div><!-- end .container -->
+</body>
+<!-- InstanceEnd --></html>
