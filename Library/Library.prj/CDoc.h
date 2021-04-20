@@ -18,8 +18,6 @@ public:
 
   virtual bool setPath(PathDlgDsc& dsc) {return getPathDlg(dsc, path);}
 
-  virtual BOOL OnNewDocument() override {path.clear(); return true;}
-
   virtual BOOL OnOpenDocument(LPCTSTR lpszPathName) override;
 
   virtual bool OnOpenIncDocument(LPCTSTR lpszPathName);
@@ -45,14 +43,4 @@ public:
   virtual void serialize(Archive& arcv) = 0;
   };
 
-
-
-#if 0
-struct PathDlgDsc {
-String title;         // Save As Parameters, examples:
-String name;          // _T("mumble.txt")
-String ext;           // _T("txt")
-String pattern;       // _T("*.txt")
-};
-#endif
 
