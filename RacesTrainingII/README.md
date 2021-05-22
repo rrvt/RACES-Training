@@ -80,6 +80,11 @@ WixApp was used to create the installer Product file.
 
 ## Updates
 
+### Update 5/21/21
+
+Added a clear function to all database so that load may be performed multiple time with different
+databases.
+
 ### 4/19/21
 
 The Library has changed.  Also some logic was added so that the printer orientation may be set both in
