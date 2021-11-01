@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "BTM.h"
-#include "About.h"
+#include "AboutDlg.h"
 #include "ExtraResource.h"
 #include "IniFile.h"
 #include "MainFrame.h"
@@ -97,5 +97,5 @@ String topic = m_pszHelpFilePath; topic += _T(">Introduction");
   }
 
 
-void BTM::OnAppAbout() {CAboutDlg aboutDlg; aboutDlg.DoModal();}
+void BTM::OnAppAbout() {AboutDlg aboutDlg; aboutDlg.DoModal();}
 

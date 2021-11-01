@@ -79,7 +79,8 @@
 
   <Component Id="RACESTraining.cmp"  Guid="8E47FEF1-8332-4F81-B5C4-085790E163C0"
                                                                         Directory="RacesTraining.pff">
-    <File Id="RACESTraining.cmp" Source="$(var.SolutionDir)..\Release\RacesTraining.exe" KeyPath="yes"/>
+    <File Id="RACESTraining.cmp"
+                            Source="$(var.SolutionDir)..\Release\RacesTrainingII.exe" KeyPath="yes"/>
 
     <Shortcut Id               = "RACESTraining.shc"
               Name             = "RACES Training"
@@ -103,7 +104,7 @@
 <Fragment>
 
   <Component Id="UninstallRACESTraining.cmp" 
-                            Guid="8ECA6E7E-BE84-4681-897E-60BC6A7D25C5" Directory="RACESTraining.pmf">
+                            Guid="DE95FA1D-126E-4927-8D6A-5ABD9AD8E979" Directory="RACESTraining.pmf">
 
     <Shortcut Id               = "UninstallRACESTraining.shc"
               Name             = "Uninstall RACES Training"

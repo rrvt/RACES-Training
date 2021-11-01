@@ -36,9 +36,6 @@
     <ClInclude Include="BTMView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Library\Extras\About.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Library\Extras\ExtraResource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -60,6 +57,9 @@
     <ClInclude Include="..\Common\CSVrcdC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Library\Extras\AboutDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -75,9 +75,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BTMView.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Library\Extras\About.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Library\Extras\OptionsDlg.cpp">
@@ -98,6 +95,9 @@
     <ClCompile Include="BTMrcd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Library\Extras\AboutDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BTM.rc">
@@ -109,13 +109,13 @@
     <None Include="res\BTM.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="..\..\Library\Extras\About.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="..\..\Library\Extras\Options.rc2">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Library\Extras\AboutDlg.rc2">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

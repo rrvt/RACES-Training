@@ -22,7 +22,7 @@ IconPath=D:\Sources\RacesTrainingII\RacesTrainingII.prj\res\RacesTraining.ico
 ProductName=RacesTraining
 Company=Bob -- K6RWY
 WixName=RacesTraining
-WixVersion=1.0.4.0
+WixVersion=1.0.6.0
 UpgradeGUID=EBABC970-1899-4087-9F41-371ED8EF81FF
 SaveVerAllowed=0
 LicenseRequired=0
@@ -59,7 +59,7 @@ Path=D:\Sources\RacesTrainingII\Release\RacesTraining.chm
 Guid=804932D9-38E2-4A2D-BB20-73E3FC700610
 [Ftr00Cmp01]
 ID=RACES Training
-Path=D:\Sources\RacesTrainingII\Release\RacesTraining.exe
+Path=D:\Sources\RacesTrainingII\Release\RacesTrainingII.exe
 Guid=8E47FEF1-8332-4F81-B5C4-085790E163C0
 IconID=RacesTraining
 IsStartMenu=1

@@ -80,6 +80,11 @@ WixApp was used to create the installer Product file.
 
 ## Updates
 
+### Update 10/31/21
+
+Changed Resources (i.e. xxx.rc data) access so that it will work with a dll.  Changed the logic in the
+About Box code.  Some other library changes.  Some corresponding changes in the application.
+
 ### Update 5/21/21
 
 Added a clear function to all database so that load may be performed multiple time with different

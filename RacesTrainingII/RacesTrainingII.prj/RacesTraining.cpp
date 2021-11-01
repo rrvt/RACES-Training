@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "RacesTraining.h"
-#include "About.h"
+#include "AboutDlg.h"
 #include "DBtables.h"
 #include "IniFile.h"
 #include "MainFrame.h"
@@ -99,5 +99,5 @@ String topic = m_pszHelpFilePath; topic += _T(">Introduction");
   }
 
 
-void RacesTraining::OnAppAbout() {CAboutDlg aboutDlg; aboutDlg.DoModal();}
+void RacesTraining::OnAppAbout() {AboutDlg aboutDlg; aboutDlg.DoModal();}
 

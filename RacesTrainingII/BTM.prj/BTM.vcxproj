@@ -110,7 +110,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Library\Extras\About.h" />
+    <ClInclude Include="..\..\Library\Extras\AboutDlg.h" />
     <ClInclude Include="..\Common\CSVrcdC.h" />
     <ClInclude Include="BTM.h" />
     <ClInclude Include="BTMbldr.h" />
@@ -127,6 +127,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Library\Extras\AboutDlg.cpp" />
     <ClCompile Include="BTM.cpp" />
     <ClCompile Include="BTMbldr.cpp" />
     <ClCompile Include="BTMDoc.cpp" />
@@ -136,7 +137,6 @@
     <ClCompile Include="Labels.cpp" />
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="..\..\Library\Extras\About.cpp" />
     <ClCompile Include="..\..\Library\Extras\OptionsDlg.cpp" />
     <ClCompile Include="..\Common\CSVrcdC.cpp" />
   </ItemGroup>
@@ -144,7 +144,7 @@
     <ResourceCompile Include="BTM.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\Library\Extras\About.rc2" />
+    <None Include="..\..\Library\Extras\AboutDlg.rc2" />
     <None Include="res\BTM.rc2" />
     <None Include="..\..\Library\Extras\Options.rc2" />
     <None Include="..\README.md" />
