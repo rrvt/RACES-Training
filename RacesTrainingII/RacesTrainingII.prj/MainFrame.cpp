@@ -62,17 +62,12 @@ int MainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct) {
   }
 
 
-void MainFrame::setupToolBar() {
-
-//  menu.LoadMenu(IDR_PopupMenu);   toolBar.setMnuCtrl(ID_MbrInfo, menu.GetSafeHmenu(), _T("Mbr Info"));
-
-  toolBar.install();
-  }
-
-
 // MainFrame message handlers
 
 afx_msg LRESULT MainFrame::OnResetToolBar(WPARAM wParam, LPARAM lParam) {setupToolBar();  return 0;}
+
+
+void MainFrame::setupToolBar() { }
 
 
 // MainFrame diagnostics

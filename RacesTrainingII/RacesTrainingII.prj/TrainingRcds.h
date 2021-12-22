@@ -10,7 +10,7 @@ class CSVrcds;
 class CSVrcd;
 
 class TrainingRcds;
-typedef RcdPtrT< TrainingRcd> TrainingRcdP;
+typedef DatumPtrT< TrainingRcd> TrainingRcdP;
 typedef IterT<TrainingRcds, TrainingRcd> TRcdsIter;
 
 

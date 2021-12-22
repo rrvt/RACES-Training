@@ -6,7 +6,7 @@
 
 
 class BTMrcds;
-typedef RcdPtrT< BTMrcd> BTMrcdP;
+typedef DatumPtrT< BTMrcd> BTMrcdP;
 typedef CSVRcdsT<BTMrcd, BTMrcdP> BTMrcdsB;
 typedef CSVIterT<BTMrcd, BTMrcdP> CSVIter;
 

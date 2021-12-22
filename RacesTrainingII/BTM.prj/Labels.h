@@ -37,7 +37,7 @@ private:
 
 
 class Labels;
-typedef RcdPtrT<Label> LabelP;
+typedef DatumPtrT<Label> LabelP;
 typedef IterT<Labels, Label> LblIter;
 
 

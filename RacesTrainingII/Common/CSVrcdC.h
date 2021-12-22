@@ -32,7 +32,7 @@ private:
 
 
 class CSVrcdC;
-typedef RcdPtrT<CSVfld> CSVFldP;
+typedef DatumPtrT<CSVfld> CSVFldP;
 typedef IterT<CSVrcdC, CSVfld> CSVrcdIter;
 
 
