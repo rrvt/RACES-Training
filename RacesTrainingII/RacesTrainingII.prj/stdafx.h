@@ -33,8 +33,8 @@
 
 #include <afxdialogex.h>
 #include <afxcontrolbars.h>     // MFC support for ribbons and control bars
+#include <afxdb.h>              // Database Functionality
 
-#include <afxcontrolbars.h>
 #include <comutil.h>
 #include <string>
 #include <tchar.h>

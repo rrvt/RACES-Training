@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "RacesTrainingDoc.h"
 #include "CSVrcds.h"
-#include "DBtables.h"
+#include "Database.h"
 #include "filename.h"
 #include "GetPathDlg.h"
 #include "IniFile.h"
@@ -40,7 +40,7 @@ END_MESSAGE_MAP()
 
 RacesTrainingDoc::RacesTrainingDoc() noexcept : dataSource(NotePadSrc) {
 
-  pathDsc = PathDlgDsc(_T("RACES Training "), _T(""), _T("csv"), _T("*.csv"));
+  pathDsc(_T("RACES Training "), _T(""), _T("csv"), _T("*.csv"));
   }
 
 RacesTrainingDoc::~RacesTrainingDoc() { }
@@ -58,7 +58,7 @@ String ext;
   if (getPathDlg(_T("Database"), 0, _T("accdb"), _T("*.accdb"), theApp.databasePath))
                                        iniFile.writeString(FileSection, DBFileKey, theApp.databasePath);
 
-  dbTables.load(theApp.databasePath);
+  database.load(theApp.databasePath);
 
   display(NotePadSrc);
   }
@@ -71,7 +71,7 @@ void RacesTrainingDoc::onLoadTrainingCSVfile() {
 
   notePad.clear(); dataSource = CSVSrc;
 
-  pathDsc = PathDlgDsc(_T("RACES Training "), pathDsc.name, _T("csv"), _T("*.csv"));
+  pathDsc(_T("RACES Training "), pathDsc.name, _T("csv"), _T("*.csv"));
 
   if (!setPath(pathDsc)) return;
 

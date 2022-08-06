@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "RacesTraining.h"
 #include "AboutDlg.h"
-#include "DBtables.h"
+#include "Database.h"
 #include "IniFile.h"
 #include "MainFrame.h"
 #include "NotePad.h"
@@ -69,7 +69,8 @@ BOOL RacesTraining::InitInstance() {
   view()->setFont(_T("Courier New"), 12.0);
 
   iniFile.readString(FileSection, DBFileKey, databasePath);
-  dbTables.load(databasePath);
+
+  database.load(databasePath);
 
   options.load();    view()->setOrientation(options.orient);
 

@@ -4,8 +4,7 @@
 #include "stdafx.h"
 #include "TrainingRcds.h"
 #include "CSVrcds.h"
-#include "MemberTbl.h"
-#include "StatusTbl.h"
+#include "Database.h"
 #include "TrnNeeded.h"
 
 
@@ -274,13 +273,13 @@ String       fcc;
 
     fcc = trn->callSign;
 
-    MemberRcd* mbr          = memberTbl.find(fcc);   if (!mbr) continue;
-    bool          badgeOK   = mbr->badgeOK;
-    String        rspdr     = mbr->responder.trim();
-    bool          dbRspdr   = !rspdr.isEmpty();
-    long          statusID  = mbr->statusID;
-    StatusRcd*    statusRcd = statusTbl.find(statusID);
-    String        status    = statusRcd ? statusRcd->abbreviation : _T("");
+    MbrRcd* mbr       = mbrTbl.find(fcc);   if (!mbr) continue;
+    bool    badgeOK   = mbr->badgeOK;
+    String  rspdr     = mbr->responder.trim();
+    bool    dbRspdr   = !rspdr.isEmpty();
+    long    statusID  = mbr->statusID;
+    StsRcd* statusRcd = stsTbl.find(statusID);
+    String  status    = statusRcd ? statusRcd->abbreviation : String(_T(""));
 
     if (status == _T("Fmr")) continue;
 

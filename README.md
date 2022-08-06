@@ -80,6 +80,10 @@ WixApp was used to create the installer Product file.
 
 ## Updates
 
+### Update 8/4/22
+
+Rewrite of MS Access interface and other library updates.
+
 ### Update 01/31/22
 
 Updates to the library, mostly about the toolbar, but also NewAllocator, and a minor addition to

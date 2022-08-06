@@ -34,7 +34,7 @@ END_MESSAGE_MAP()
 // BTMDoc construction/destruction
 
 BTMDoc::BTMDoc() noexcept : dataSource(NotePadSrc) {
-  pathDlgDsc = PathDlgDsc(_T("Ugly Example"), _T(""), _T("txt"), _T("*.txt"));
+  pathDlgDsc(_T("Ugly Example"), _T(""), _T("txt"), _T("*.txt"));
   }
 
 BTMDoc::~BTMDoc() { }
@@ -51,7 +51,7 @@ void BTMDoc::onLoadTrainingCSVfile() {
 
   notePad.clear();   dataSource = CSVSrc;
 
-  pathDlgDsc = PathDlgDsc(_T("Training CSV File"), _T(""), _T("csv"), _T("*.csv"));
+  pathDlgDsc(_T("Training CSV File"), _T(""), _T("csv"), _T("*.csv"));
 
   if (!setPath(pathDlgDsc)) return;
 
@@ -73,14 +73,14 @@ void BTMDoc::onLoadTrainingCSVfile() {
 
 
 void BTMDoc::OnPrepTrng_h() {
-  pathDlgDsc = PathDlgDsc(_T("Save TrainingRcd.h"), _T("TrainingRcd.h"), _T("h"), _T("*.h"));
+  pathDlgDsc(_T("Save TrainingRcd.h"), _T("TrainingRcd.h"), _T("h"), _T("*.h"));
 
   btmBldr.OnPrepTrng_h();  display(CodeSrc);
   }
 
 
 void BTMDoc::OnPrepTrng_cpp() {
-  pathDlgDsc = PathDlgDsc(_T("Save TrainingRcd.cpp"), _T("TrainingRcd.cpp"), _T("cpp"), _T("*.cpp"));
+  pathDlgDsc(_T("Save TrainingRcd.cpp"), _T("TrainingRcd.cpp"), _T("cpp"), _T("*.cpp"));
 
   btmBldr.OnPrepTrng_cpp(); display(CodeSrc);
   }
