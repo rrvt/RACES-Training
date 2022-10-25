@@ -80,6 +80,10 @@ WixApp was used to create the installer Product file.
 
 ## Updates
 
+### Update 10/24/22
+
+Add logic to keep track of the position and size of the window.  Other issues.
+
 ### Update 8/4/22
 
 Rewrite of MS Access interface and other library updates.

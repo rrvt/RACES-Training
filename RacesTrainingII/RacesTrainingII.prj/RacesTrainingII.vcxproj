@@ -136,11 +136,11 @@
   <ItemGroup>
     <ClInclude Include="..\..\Library\Extras\AboutDlg.h" />
     <ClInclude Include="..\Common\CSVrcdC.h" />
+    <ClInclude Include="..\..\Library\Extras\ExtraResource.h" />
+    <ClInclude Include="..\..\Library\Extras\OptionsDlg.h" />
     <ClInclude Include="CSVrcds.h" />
     <ClInclude Include="Database.h" />
-    <ClInclude Include="..\..\Library\Extras\ExtraResource.h" />
     <ClInclude Include="MainFrame.h" />
-    <ClInclude Include="..\..\Library\Extras\OptionsDlg.h" />
     <ClInclude Include="RacesTraining.h" />
     <ClInclude Include="RacesTrainingDoc.h" />
     <ClInclude Include="RacesTrainingView.h" />
@@ -154,10 +154,10 @@
   <ItemGroup>
     <ClCompile Include="..\..\Library\Extras\AboutDlg.cpp" />
     <ClCompile Include="..\Common\CSVrcdC.cpp" />
+    <ClCompile Include="..\..\Library\Extras\OptionsDlg.cpp" />
     <ClCompile Include="CSVrcds.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="MainFrame.cpp" />
-    <ClCompile Include="..\..\Library\Extras\OptionsDlg.cpp" />
     <ClCompile Include="RacesTraining.cpp" />
     <ClCompile Include="RacesTrainingDoc.cpp" />
     <ClCompile Include="RacesTrainingView.cpp" />
