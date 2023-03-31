@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+<Product Id="*" UpgradeCode="EBABC970-1899-4087-9F41-371ED8EF81FF" Language="1033"
+                  Manufacturer="Bob -- K6RWY" Name="RacesTraining"
+                  Version="!(bind.fileVersion.RACES_Training.cmp)"
+                  >
+
+  <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine"
+                      Manufacturer="Bob -- K6RWY" Description="Installs RacesTraining"
+                      Comments="Copyright (c) Bob -- K6RWY"
+                      />
+
+  <MajorUpgrade Schedule="afterInstallInitialize"
+                                AllowDowngrades="no"   IgnoreRemoveFailure="no"   AllowSameVersionUpgrades="no"
+                                DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+  <MediaTemplate EmbedCab="yes" />
+
+  <UI Id="My_InstallDir.ui">
+    <UIRef Id="WixUI_InstallDir" />
+    <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg">
+      NOT Installed
+    </Publish>
+    <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">
+      1
+    </Publish>
+  </UI>
+
+  <WixVariable Id="WixUIDialogBmp" Value="C:\Program Files (x86)\WixApp\dialog.bmp"/>
+  <WixVariable Id="WixUIBannerBmp" Value="C:\Program Files (x86)\WixApp\banner.bmp"/>
+
+  <Icon     Id="UnistallRacesTrainingIcon.ico"
+                  SourceFile="$(var.SolutionDir)..\RacesTraining.prj\res\UnistallRacesTraining.ico"/>
+  <Icon     Id="RacesTrainingIcon.ico"
+                          SourceFile="$(var.SolutionDir)..\RacesTraining.prj\res\RacesTraining.ico"/>
+  <Property Id="ARPPRODUCTICON"  Value="UnistallRacesTrainingIcon.ico" />
+
+  <Feature Id="ProductFeatures" Title="Main Product" Level="1" >
+    <ComponentGroupRef Id="RacesTraining.ftr"/>
+    <ComponentGroupRef Id="Uninstall_RACES_Training.ftr"/>
+  </Feature>
+</Product>
+
+<Fragment>
+<ComponentGroup Id="RacesTraining.ftr">
+  <ComponentRef Id="Help.cmp"/>
+  <ComponentRef Id="RACES_Training.cmp"/>
+</ComponentGroup>
+<ComponentGroup Id="Uninstall_RACES_Training.ftr">
+  <ComponentRef Id="Uninstall_RACES_Training.cmp"/>
+</ComponentGroup>
+</Fragment>
+
+<!--Directory structure-->
+<Fragment>
+  <Directory Id="TARGETDIR" Name="SourceDir">
+    <Directory Id="ProgramFilesFolder">
+      <Directory Id="RacesTraining.pff" Name="RacesTraining" />
+    </Directory>
+
+    <Directory Id="ProgramMenuFolder">
+      <Directory Id="RACES_Training.pmf" Name="RACES Training" />
+    </Directory>
+
+    <Directory Id="DesktopFolder" />
+
+  </Directory>
+
+  <Property Id="ApplicationFolderName" Value="RacesTraining" />
+  <Property Id="WIXUI_INSTALLDIR"      Value="RacesTraining.pff"/>
+  <Property Id="WixAppFolder"          Value="WixPerMachineFolder" />
+</Fragment>
+
+<Fragment>
+
+  <Component Id="Help.cmp"  Guid="804932D9-38E2-4A2D-BB20-73E3FC700610" Directory="RacesTraining.pff">
+    <File Id="Help.cmp" Source="$(var.SolutionDir)..\Release\RacesTraining.chm" KeyPath="yes"/>
+  </Component>
+
+  <Component Id="RACES_Training.cmp"  Guid="8E47FEF1-8332-4F81-B5C4-085790E163C0"
+                                                                        Directory="RacesTraining.pff">
+    <File Id="RACES_Training.cmp"
+                              Source="$(var.SolutionDir)..\Release\RacesTraining.exe" KeyPath="yes"/>
+
+    <Shortcut Id               = "RACESTraining.shc"
+              Name             = "RACES Training"
+              Advertise        = "yes"
+              Directory        = "RACES_Training.pmf"
+              WorkingDirectory = "RacesTraining.pff"
+              Icon             = "RacesTrainingIcon.ico"
+              />
+
+    <Shortcut Id               = "RACESTraining.dsk"
+              Name             = "RACES Training"
+              Advertise        = "yes"
+              Directory        = "DesktopFolder"
+              WorkingDirectory = "RacesTraining.pff"
+              Icon             = "RacesTrainingIcon.ico"
+              />
+  </Component>
+
+</Fragment>
+
+<Fragment>
+
+  <Component Id="Uninstall_RACES_Training.cmp" 
+                          Guid="47B509D4-D3D5-483A-ABE0-7DD6E703B8D3" Directory="RACES_Training.pmf">
+
+    <Shortcut Id               = "UninstallRACESTraining.shc"
+              Name             = "Uninstall RACES Training"
+              Description      = "Uninstalls RACES Training"
+              Target           = "[System64Folder]msiexec.exe"
+              Arguments        = "/x [ProductCode]"
+              Icon             = "UnistallRacesTrainingIcon.ico"
+              />
+    <RemoveFolder Id="RACES_Training.uni" Directory="RACES_Training.pmf" On="uninstall"/>
+    <RegistryValue Root="HKCU" Key="Software\Uninstall_RACES_Training.cmp" Name="installed"
+                   Type="integer" Value="1" KeyPath="yes"/>
+  </Component>
+
+</Fragment>
+
+</Wix>

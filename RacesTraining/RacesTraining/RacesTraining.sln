@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Library", "..\..\Library\Library.prj\Library.vcxproj", "{CF57F3EC-D3DB-4469-8519-3F9D73785D9B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FB47E080-72D3-43F9-AE18-1432DA813531} = {FB47E080-72D3-43F9-AE18-1432DA813531}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BTM", "..\BTM.prj\BTM.vcxproj", "{CB0FCB40-46F9-4094-9494-AF14CA66612B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12084586-A769-4348-B54D-336FA036A1FB} = {12084586-A769-4348-B54D-336FA036A1FB}
+		{CF57F3EC-D3DB-4469-8519-3F9D73785D9B} = {CF57F3EC-D3DB-4469-8519-3F9D73785D9B}
+		{FB47E080-72D3-43F9-AE18-1432DA813531} = {FB47E080-72D3-43F9-AE18-1432DA813531}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AccessDB", "..\..\Library\AccessDB.prj\AccessDB.vcxproj", "{12084586-A769-4348-B54D-336FA036A1FB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CF57F3EC-D3DB-4469-8519-3F9D73785D9B} = {CF57F3EC-D3DB-4469-8519-3F9D73785D9B}
+		{FB47E080-72D3-43F9-AE18-1432DA813531} = {FB47E080-72D3-43F9-AE18-1432DA813531}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RacesTraining.hlp", "..\RacesTraining.hlp\RacesTraining.hlp.vcxproj", "{FB47E080-72D3-43F9-AE18-1432DA813531}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "RacesTraining.wix", "..\RacesTraining.wix\RacesTraining.wix.wixproj", "{4444235E-809F-43EB-8BE1-68F9574CD3FB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12084586-A769-4348-B54D-336FA036A1FB} = {12084586-A769-4348-B54D-336FA036A1FB}
+		{CB0FCB40-46F9-4094-9494-AF14CA66612B} = {CB0FCB40-46F9-4094-9494-AF14CA66612B}
+		{CF57F3EC-D3DB-4469-8519-3F9D73785D9B} = {CF57F3EC-D3DB-4469-8519-3F9D73785D9B}
+		{FB47E080-72D3-43F9-AE18-1432DA813531} = {FB47E080-72D3-43F9-AE18-1432DA813531}
+		{FFD51D1F-8E70-4E9B-8EF6-42C764F3E481} = {FFD51D1F-8E70-4E9B-8EF6-42C764F3E481}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RacesTraining", "..\RacesTraining.prj\RacesTraining.vcxproj", "{FFD51D1F-8E70-4E9B-8EF6-42C764F3E481}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF57F3EC-D3DB-4469-8519-3F9D73785D9B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CF57F3EC-D3DB-4469-8519-3F9D73785D9B}.Debug|Win32.Build.0 = Debug|Win32
+		{CF57F3EC-D3DB-4469-8519-3F9D73785D9B}.Release|Win32.ActiveCfg = Release|Win32
+		{CF57F3EC-D3DB-4469-8519-3F9D73785D9B}.Release|Win32.Build.0 = Release|Win32
+		{CB0FCB40-46F9-4094-9494-AF14CA66612B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CB0FCB40-46F9-4094-9494-AF14CA66612B}.Debug|Win32.Build.0 = Debug|Win32
+		{CB0FCB40-46F9-4094-9494-AF14CA66612B}.Release|Win32.ActiveCfg = Release|Win32
+		{CB0FCB40-46F9-4094-9494-AF14CA66612B}.Release|Win32.Build.0 = Release|Win32
+		{12084586-A769-4348-B54D-336FA036A1FB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{12084586-A769-4348-B54D-336FA036A1FB}.Debug|Win32.Build.0 = Debug|Win32
+		{12084586-A769-4348-B54D-336FA036A1FB}.Release|Win32.ActiveCfg = Release|Win32
+		{12084586-A769-4348-B54D-336FA036A1FB}.Release|Win32.Build.0 = Release|Win32
+		{FB47E080-72D3-43F9-AE18-1432DA813531}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FB47E080-72D3-43F9-AE18-1432DA813531}.Debug|Win32.Build.0 = Debug|Win32
+		{FB47E080-72D3-43F9-AE18-1432DA813531}.Release|Win32.ActiveCfg = Release|Win32
+		{FB47E080-72D3-43F9-AE18-1432DA813531}.Release|Win32.Build.0 = Release|Win32
+		{4444235E-809F-43EB-8BE1-68F9574CD3FB}.Debug|Win32.ActiveCfg = Debug|x86
+		{4444235E-809F-43EB-8BE1-68F9574CD3FB}.Release|Win32.ActiveCfg = Release|x86
+		{4444235E-809F-43EB-8BE1-68F9574CD3FB}.Release|Win32.Build.0 = Release|x86
+		{FFD51D1F-8E70-4E9B-8EF6-42C764F3E481}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FFD51D1F-8E70-4E9B-8EF6-42C764F3E481}.Debug|Win32.Build.0 = Debug|Win32
+		{FFD51D1F-8E70-4E9B-8EF6-42C764F3E481}.Release|Win32.ActiveCfg = Release|Win32
+		{FFD51D1F-8E70-4E9B-8EF6-42C764F3E481}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86240205-D992-4804-B7D8-ACBD6B6C0F23}
+	EndGlobalSection
+EndGlobal
