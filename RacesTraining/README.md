@@ -80,6 +80,10 @@ WixApp was used to create the installer Product file.
 
 ## Updates
 
+### Update 12/25/23
+
+Modify ExpandableP and subsequent ripple.
+
 ### Update 3/30/23
 
 Library updates and corresponding application updates.

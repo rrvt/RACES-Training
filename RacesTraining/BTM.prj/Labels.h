@@ -37,8 +37,8 @@ private:
 
 
 class Labels;
-typedef DatumPtrT<Label> LabelP;
-typedef IterT<Labels, Label> LblIter;
+typedef DatumPtrT<Label, int> LabelP;
+typedef IterT<Labels, Label>  LblIter;
 
 
 class Labels {
@@ -46,7 +46,7 @@ class Labels {
 String                         three;
 String                         four;
 
-ExpandableP<Label, LabelP, 16> data;
+ExpandableP<Label, int, LabelP, 16> data;
 
 public:
 

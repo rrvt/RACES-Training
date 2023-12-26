@@ -12,9 +12,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{FFD51D1F-8E70-4E9B-8EF6-42C764F3E481}</ProjectGuid>
+    <ProjectGuid>{04A5A256-D474-44DE-89F3-EF00F06D1226}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
-    <RootNamespace>TestApp</RootNamespace>
+    <RootNamespace>AppT3mplate</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -62,14 +62,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile/>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\Common\;$(SolutionDir)..\..\Library\AccessDB.prj\;$(SolutionDir)..\..\Library\Library.prj\;$(SolutionDir)..\..\Library\Extras\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <BasicRuntimeChecks/>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\Common\;$(SolutionDir)..\..\Library\Library.prj\;$(SolutionDir)..\..\Library\Extras\;$(SolutionDir)..\..\Library\AccessDB\;$(SolutionDir)..\..\Library\RACESdb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <SupportJustMyCode>false</SupportJustMyCode>
+      <BasicRuntimeChecks/>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
       <PrecompiledHeaderOutputFile/>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <SupportJustMyCode>false</SupportJustMyCode>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -97,17 +98,20 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>
-      </FunctionLevelLinking>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile/>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\Common\;$(SolutionDir)..\..\Library\AccessDB.prj\;$(SolutionDir)..\..\Library\Library.prj\;$(SolutionDir)..\..\Library\Extras\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\Common\;$(SolutionDir)..\..\Library\Library.prj\;$(SolutionDir)..\..\Library\Extras\;$(SolutionDir)..\..\Library\AccessDB\;$(SolutionDir)..\..\Library\RACESdb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <BasicRuntimeChecks/>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
       <PrecompiledHeaderOutputFile/>
+      <BasicRuntimeChecks/>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -135,8 +139,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Library\Extras\AboutDlg.h" />
-    <ClInclude Include="..\Common\CSVrcdC.h" />
     <ClInclude Include="..\..\Library\Extras\OptionsDlg.h" />
+    <ClInclude Include="..\..\Library\Extras\ResourceExtra.h" />
+    <ClInclude Include="..\..\Library\Extras\RptOrientDlgOne.h" />
     <ClInclude Include="CSVrcds.h" />
     <ClInclude Include="Database.h" />
     <ClInclude Include="framework.h" />
@@ -150,13 +155,12 @@
     <ClInclude Include="TrainingRcd.h" />
     <ClInclude Include="TrainingRcds.h" />
     <ClInclude Include="TrnNeeded.h" />
-  <ClInclude Include="..\..\Library\Extras\ResourceExtra.h" />
-    <ClInclude Include="..\..\Library\Extras\RptOrientDlgOne.h" />
+  <ClInclude Include="..\Common\CSVrcdC.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Library\Extras\AboutDlg.cpp" />
-    <ClCompile Include="..\Common\CSVrcdC.cpp" />
     <ClCompile Include="..\..\Library\Extras\OptionsDlg.cpp" />
+    <ClCompile Include="..\..\Library\Extras\RptOrientDlgOne.cpp" />
     <ClCompile Include="CSVrcds.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="MainFrame.cpp" />
@@ -167,28 +171,32 @@
     <ClCompile Include="TrainingRcd.cpp" />
     <ClCompile Include="TrainingRcds.cpp" />
     <ClCompile Include="TrnNeeded.cpp" />
-  <ClCompile Include="..\..\Library\Extras\RptOrientDlgOne.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="RacesTraining.rc" />
+  <ClCompile Include="..\Common\CSVrcdC.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Library\Extras\AboutDlg.rc2" />
     <None Include="..\..\Library\Extras\Options.rc2" />
+    <None Include="..\..\Library\Extras\RptOrientOne.rc2" />
     <None Include="res\RacesTraining.rc2" />
-    <None Include="..\README.md" />
-  <None Include="..\..\Library\Extras\RptOrientOne.rc2" />
+    <None Include="res\Toolbar.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\RacesTraining.ico" />
+    <Image Include="res\UnistallRacesTraining.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Library\AccessDB.prj\AccessDB.vcxproj">
-      <Project>{12084586-a769-4348-b54d-336fa036a1fb}</Project>
+    <ProjectReference Include="..\..\Library\AccessDB\AccessDB.vcxproj">
+      <Project>{57279f7b-d4b9-47e3-8419-cb9b97c596fa}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\Library\Library.prj\Library.vcxproj">
       <Project>{cf57f3ec-d3db-4469-8519-3f9d73785d9b}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\Library\RACESdb\RACESdb.vcxproj">
+      <Project>{12084586-a769-4348-b54d-336fa036a1fb}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RacesTraining.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

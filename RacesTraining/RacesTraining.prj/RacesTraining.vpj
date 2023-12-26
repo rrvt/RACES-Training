@@ -2,7 +2,7 @@
 <Project
   Version="10.0"
   VendorName="SlickEdit"
-  TemplateName="Microsoft Visual Studio 2017 C++"
+  TemplateName="Microsoft Visual Studio 2022 C++"
   WorkingDir="."
   AssociatedFile="RacesTraining.vcxproj"
   AssociatedFileType="microsoft visual studio visual c++">
@@ -11,7 +11,7 @@
     Type="vcproj"
     DebugCallbackName="windbg"
     OutputFile=""
-    CompilerConfigName="Visual Studio 2017">
+    CompilerConfigName="Visual Studio 2010">
     <Includes>
       <Include Dir="%(INCLUDE)"/>
     </Includes>
@@ -19,7 +19,6 @@
       <Target
         Name="Build Solution"
         MenuCaption="Build Solution"
-        ShowOnMenu="HideIfNoCmdLine"
         CaptureOutputWith="ProcessBuffer"
         SaveOption="SaveAll"
         RunFromDir="%rw"
@@ -41,7 +40,8 @@
         CaptureOutputWith="ProcessBuffer"
         SaveOption="SaveAll"
         RunFromDir="%rw"
-        ClearProcessBuffer="1">
+        ClearProcessBuffer="1"
+        Verbose="1">
         <Exec CmdLine='msbuild "%w" /t:"%sf:Rebuild" /p:Configuration="%bn" /p:Platform="%bp" /nologo /v:m'/>
       </Target>
       <Target
@@ -106,7 +106,7 @@
     Type="vcproj"
     DebugCallbackName="windbg"
     OutputFile=""
-    CompilerConfigName="Visual Studio 2017">
+    CompilerConfigName="Visual Studio 2010">
     <Includes>
       <Include Dir="%(INCLUDE)"/>
     </Includes>
@@ -114,7 +114,6 @@
       <Target
         Name="Build Solution"
         MenuCaption="Build Solution"
-        ShowOnMenu="HideIfNoCmdLine"
         CaptureOutputWith="ProcessBuffer"
         SaveOption="SaveAll"
         RunFromDir="%rw"
@@ -136,7 +135,8 @@
         CaptureOutputWith="ProcessBuffer"
         SaveOption="SaveAll"
         RunFromDir="%rw"
-        ClearProcessBuffer="1">
+        ClearProcessBuffer="1"
+        Verbose="1">
         <Exec CmdLine='msbuild "%w" /t:"%sf:Rebuild" /p:Configuration="%bn" /p:Platform="%bp" /nologo /v:m'/>
       </Target>
       <Target

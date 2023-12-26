@@ -15,9 +15,9 @@ public:
   };
 
 
-typedef DatumPtrT< CSVrcd> CSVrcdP;
-typedef CSVRcdsT<CSVrcd, CSVrcdP> CSVRcdsB;
-typedef CSVIterT<CSVrcd, CSVrcdP> CSVIter;
+typedef DatumPtrT<CSVrcd, int>          CSVrcdP;
+typedef CSVRcdsT< CSVrcd, int, CSVrcdP> CSVRcdsB;
+typedef CSVIterT< CSVrcd, int, CSVrcdP> CSVIter;
 
 
 class CSVrcds : public CSVRcdsB {

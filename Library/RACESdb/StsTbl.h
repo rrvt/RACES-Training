@@ -1,41 +1,40 @@
-// CityState Table
+// Status Table
 
 
 #pragma once
-#include "CtySet.h"
+#include "StsSet.h"
 #include "ExpandableP.h"
 #include "IterT.h"
 
 
-class CtyRcd {
+class StsRcd {
 int   id;
 bool  dirty;
 bool  remove;
 
 public:
 
-String city;
-String state;
-String zip;
+String abbreviation;
+String description;
 
-  CtyRcd() : id(0), dirty(false), remove(false) { }
- ~CtyRcd() { }
+  StsRcd() : id(0), dirty(false), remove(false) { }
+ ~StsRcd() { }
 
-  void load(CtySet* set);
+  void load(StsSet* set);
 
   int getId() {return id;}
 
   void setDirty()  {dirty = true;}
   void setRemove() {dirty = true; remove = true;}
 
-  void store(CtySet& set);
-  void add(  CtySet& set);
+  void store(StsSet& set);
+  void add(  StsSet& set);
 
   void display();
 
   // Needed for Insertion Sort of Primary Key
-  bool operator== (CtyRcd& r) {return id == r.id;}
-  bool operator>= (CtyRcd& r) {return id >= r.id;}
+  bool operator== (StsRcd& r) {return id == r.id;}
+  bool operator>= (StsRcd& r) {return id >= r.id;}
 
   // Needed for Binary Search of Primary Key
   bool operator== (long id) {return this->id == id;}
@@ -43,71 +42,71 @@ String zip;
   bool operator>  (long id) {return this->id >  id;}
 
   // Needed for Linear Search with one or more arguments
-  bool contains(TCchar* city, TCchar* state, TCchar* zip) {
-    return this->city == city && this->state == state && this->zip == zip;
+  bool contains(TCchar* abbreviation) {
+    return this->abbreviation == abbreviation;
     }
 
 private:
 
-  void copy(CtySet& set);
+  void copy(StsSet& set);
 
-  friend class CtyTbl;
+  friend class StsTbl;
   };
 
 
 // Record Pointer Declaration, see ExpandableP.h for details
-typedef DatumPtrT<CtyRcd> CtyRcdP;
+typedef DatumPtrT<StsRcd, int> StsRcdP;
 
 // Iterator Declaration, see IterT.h for details
-class CtyTbl;
-typedef IterT<CtyTbl, CtyRcd> CtyIter;
+class StsTbl;
+typedef IterT<StsTbl, StsRcd> StsIter;
 
 
-class CtyTbl {
+class StsTbl {
 
-ExpandableP<CtyRcd, CtyRcdP, 2> data;
+ExpandableP<StsRcd, int, StsRcdP, 2> data;
 
 int    maxID;
-CtySet ctySet;
+StsSet stsSet;
 
 public:
 
 String name;
 
-  CtyTbl() : maxID(0) { }
- ~CtyTbl() {clear();}
+  StsTbl() : maxID(0) { }
+ ~StsTbl() {clear();}
 
   void clear() {data.clear();}
 
   bool load(TCchar* path);      // load database table into memory
 
-  CtyRcd* add(CtyRcd& rcd);     // Add a new record to table and database
+  StsRcd* add(StsRcd& rcd);     // Add a new record to table and database
 
   bool store(TCchar* path);     // Store/Del entities marked
 
-  CtyRcd* find(int id) {return data.bSearch(id);}
-  CtyRcd* find(TCchar* city, TCchar* state, TCchar* zip);
+  StsRcd* find(int id) {return data.bSearch(id);}
+  StsRcd* find(TCchar* abbreviation);
 
   virtual void display();
 
 private:
 
-  bool open(TCchar* path) {return ctySet.open(path);}
-  void close() {ctySet.close();}
+  bool open(TCchar* path) {return stsSet.open(path);}
+  void close() {stsSet.close();}
 
   void setTabs();
 
   // returns either a pointer to data (or datum) at index i in array or zero
 
-  CtyRcd* datum(int i) {return 0 <= i && i < nData() ? data[i].p : 0;}
+  StsRcd* datum(int i) {return 0 <= i && i < nData() ? data[i].p : 0;}
 
   int   nData()      {return data.end();}   // returns number of data items in array
 
   void  removeDatum(int i) {if (0 <= i && i < nData()) data.del(i);}
 
-  friend typename CtyIter;
+  friend typename StsIter;
   };
 
 
-extern CtyTbl ctyTbl;
+extern StsTbl stsTbl;
 

@@ -1,40 +1,40 @@
-// Status Table
+// LocationPref Table
 
 
 #pragma once
-#include "StsSet.h"
+#include "LocSet.h"
 #include "ExpandableP.h"
 #include "IterT.h"
 
 
-class StsRcd {
+class LocRcd {
 int   id;
 bool  dirty;
 bool  remove;
 
 public:
 
-String abbreviation;
-String description;
+String key;
+String txt;
 
-  StsRcd() : id(0), dirty(false), remove(false) { }
- ~StsRcd() { }
+  LocRcd() : id(0), dirty(false), remove(false) { }
+ ~LocRcd() { }
 
-  void load(StsSet* set);
+  void load(LocSet* set);
 
   int getId() {return id;}
 
   void setDirty()  {dirty = true;}
   void setRemove() {dirty = true; remove = true;}
 
-  void store(StsSet& set);
-  void add(  StsSet& set);
+  void store(LocSet& set);
+  void add(  LocSet& set);
 
   void display();
 
   // Needed for Insertion Sort of Primary Key
-  bool operator== (StsRcd& r) {return id == r.id;}
-  bool operator>= (StsRcd& r) {return id >= r.id;}
+  bool operator== (LocRcd& r) {return id == r.id;}
+  bool operator>= (LocRcd& r) {return id >= r.id;}
 
   // Needed for Binary Search of Primary Key
   bool operator== (long id) {return this->id == id;}
@@ -42,71 +42,71 @@ String description;
   bool operator>  (long id) {return this->id >  id;}
 
   // Needed for Linear Search with one or more arguments
-  bool contains(TCchar* abbreviation) {
-    return this->abbreviation == abbreviation;
+  bool contains(TCchar* key) {
+    return this->key == key;
     }
 
 private:
 
-  void copy(StsSet& set);
+  void copy(LocSet& set);
 
-  friend class StsTbl;
+  friend class LocTbl;
   };
 
 
 // Record Pointer Declaration, see ExpandableP.h for details
-typedef DatumPtrT<StsRcd> StsRcdP;
+typedef DatumPtrT<LocRcd, int> LocRcdP;
 
 // Iterator Declaration, see IterT.h for details
-class StsTbl;
-typedef IterT<StsTbl, StsRcd> StsIter;
+class LocTbl;
+typedef IterT<LocTbl, LocRcd> LocIter;
 
 
-class StsTbl {
+class LocTbl {
 
-ExpandableP<StsRcd, StsRcdP, 2> data;
+ExpandableP<LocRcd, int, LocRcdP, 2> data;
 
 int    maxID;
-StsSet stsSet;
+LocSet locSet;
 
 public:
 
 String name;
 
-  StsTbl() : maxID(0) { }
- ~StsTbl() {clear();}
+  LocTbl() : maxID(0) { }
+ ~LocTbl() {clear();}
 
   void clear() {data.clear();}
 
   bool load(TCchar* path);      // load database table into memory
 
-  StsRcd* add(StsRcd& rcd);     // Add a new record to table and database
+  LocRcd* add(LocRcd& rcd);     // Add a new record to table and database
 
   bool store(TCchar* path);     // Store/Del entities marked
 
-  StsRcd* find(int id) {return data.bSearch(id);}
-  StsRcd* find(TCchar* abbreviation);
+  LocRcd* find(int id) {return data.bSearch(id);}
+  LocRcd* find(TCchar* key);
 
   virtual void display();
 
 private:
 
-  bool open(TCchar* path) {return stsSet.open(path);}
-  void close() {stsSet.close();}
+  bool open(TCchar* path) {return locSet.open(path);}
+  void close() {locSet.close();}
 
   void setTabs();
 
   // returns either a pointer to data (or datum) at index i in array or zero
 
-  StsRcd* datum(int i) {return 0 <= i && i < nData() ? data[i].p : 0;}
+  LocRcd* datum(int i) {return 0 <= i && i < nData() ? data[i].p : 0;}
 
   int   nData()      {return data.end();}   // returns number of data items in array
 
   void  removeDatum(int i) {if (0 <= i && i < nData()) data.del(i);}
 
-  friend typename StsIter;
+  friend typename LocIter;
   };
 
 
-extern StsTbl stsTbl;
+extern LocTbl locTbl;
 

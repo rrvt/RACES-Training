@@ -10,8 +10,8 @@ class CSVrcds;
 class CSVrcd;
 
 class TrainingRcds;
-typedef DatumPtrT< TrainingRcd> TrainingRcdP;
-typedef IterT<TrainingRcds, TrainingRcd> TRcdsIter;
+typedef DatumPtrT<TrainingRcd, String>       TrainingRcdP;
+typedef IterT<    TrainingRcds, TrainingRcd> TRcdsIter;
 
 
 
@@ -19,7 +19,7 @@ class TrainingRcds {
 
 String lastFcc;
 
-ExpandableP<TrainingRcd, TrainingRcdP, 2> data;
+ExpandableP<TrainingRcd, String, TrainingRcdP, 2> data;
 
 public:
 

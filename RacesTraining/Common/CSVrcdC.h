@@ -32,7 +32,7 @@ private:
 
 
 class CSVrcdC;
-typedef DatumPtrT<CSVfld> CSVFldP;
+typedef DatumPtrT<CSVfld, int> CSVFldP;
 typedef IterT<CSVrcdC, CSVfld> CSVrcdIter;
 
 
@@ -40,7 +40,7 @@ class CSVrcdC : public CSVRcdB {
 
 protected:
 
-ExpandableP <CSVfld, CSVFldP, 128> fields;
+ExpandableP<CSVfld, int, CSVFldP, 128> fields;
 
 public:
 

@@ -1,40 +1,40 @@
-// Address Table
+// AssgnPref Table
 
 
 #pragma once
-#include "AdrSet.h"
+#include "AsnSet.h"
 #include "ExpandableP.h"
 #include "IterT.h"
 
 
-class AdrRcd {
+class AsnRcd {
 int   id;
 bool  dirty;
 bool  remove;
 
 public:
 
-String address1;
-String address2;
+String aPKey;
+String txt;
 
-  AdrRcd() : id(0), dirty(false), remove(false) { }
- ~AdrRcd() { }
+  AsnRcd() : id(0), dirty(false), remove(false) { }
+ ~AsnRcd() { }
 
-  void load(AdrSet* set);
+  void load(AsnSet* set);
 
   int getId() {return id;}
 
   void setDirty()  {dirty = true;}
   void setRemove() {dirty = true; remove = true;}
 
-  void store(AdrSet& set);
-  void add(  AdrSet& set);
+  void store(AsnSet& set);
+  void add(  AsnSet& set);
 
   void display();
 
   // Needed for Insertion Sort of Primary Key
-  bool operator== (AdrRcd& r) {return id == r.id;}
-  bool operator>= (AdrRcd& r) {return id >= r.id;}
+  bool operator== (AsnRcd& r) {return id == r.id;}
+  bool operator>= (AsnRcd& r) {return id >= r.id;}
 
   // Needed for Binary Search of Primary Key
   bool operator== (long id) {return this->id == id;}
@@ -42,71 +42,71 @@ String address2;
   bool operator>  (long id) {return this->id >  id;}
 
   // Needed for Linear Search with one or more arguments
-  bool contains(TCchar* address1, TCchar* address2) {
-    return this->address1 == address1 && this->address2 == address2;
+  bool contains(TCchar* aPKey) {
+    return this->aPKey == aPKey;
     }
 
 private:
 
-  void copy(AdrSet& set);
+  void copy(AsnSet& set);
 
-  friend class AdrTbl;
+  friend class AsnTbl;
   };
 
 
 // Record Pointer Declaration, see ExpandableP.h for details
-typedef DatumPtrT<AdrRcd> AdrRcdP;
+typedef DatumPtrT<AsnRcd, int> AsnRcdP;
 
 // Iterator Declaration, see IterT.h for details
-class AdrTbl;
-typedef IterT<AdrTbl, AdrRcd> AdrIter;
+class AsnTbl;
+typedef IterT<AsnTbl, AsnRcd> AsnIter;
 
 
-class AdrTbl {
+class AsnTbl {
 
-ExpandableP<AdrRcd, AdrRcdP, 2> data;
+ExpandableP<AsnRcd, int, AsnRcdP, 2> data;
 
 int    maxID;
-AdrSet adrSet;
+AsnSet asnSet;
 
 public:
 
 String name;
 
-  AdrTbl() : maxID(0) { }
- ~AdrTbl() {clear();}
+  AsnTbl() : maxID(0) { }
+ ~AsnTbl() {clear();}
 
   void clear() {data.clear();}
 
   bool load(TCchar* path);      // load database table into memory
 
-  AdrRcd* add(AdrRcd& rcd);     // Add a new record to table and database
+  AsnRcd* add(AsnRcd& rcd);     // Add a new record to table and database
 
   bool store(TCchar* path);     // Store/Del entities marked
 
-  AdrRcd* find(int id) {return data.bSearch(id);}
-  AdrRcd* find(TCchar* address1, TCchar* address2);
+  AsnRcd* find(int id) {return data.bSearch(id);}
+  AsnRcd* find(TCchar* aPKey);
 
   virtual void display();
 
 private:
 
-  bool open(TCchar* path) {return adrSet.open(path);}
-  void close() {adrSet.close();}
+  bool open(TCchar* path) {return asnSet.open(path);}
+  void close() {asnSet.close();}
 
   void setTabs();
 
   // returns either a pointer to data (or datum) at index i in array or zero
 
-  AdrRcd* datum(int i) {return 0 <= i && i < nData() ? data[i].p : 0;}
+  AsnRcd* datum(int i) {return 0 <= i && i < nData() ? data[i].p : 0;}
 
   int   nData()      {return data.end();}   // returns number of data items in array
 
   void  removeDatum(int i) {if (0 <= i && i < nData()) data.del(i);}
 
-  friend typename AdrIter;
+  friend typename AsnIter;
   };
 
 
-extern AdrTbl adrTbl;
+extern AsnTbl asnTbl;
 

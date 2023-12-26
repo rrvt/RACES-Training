@@ -39,6 +39,8 @@ enum OpenParms {Read=1, Write=2, Create=4};
   bool open(TCchar* filePath, int parms);
   void close();
 
+  String getFilePath();
+
   void seekEnd();
 
   bool reOpen();
@@ -57,11 +59,11 @@ enum OpenParms {Read=1, Write=2, Create=4};
   bool write(Byte    v);                            // Writes one byte without interpretation of /n or /r
 
   bool read(String& s);                             // Reads a line terminated by _T("\n")
-  bool read(String& s, int n);                      // Read n characters into a string
+  bool read(String& s, int  n);                     // Read n characters into a string
   bool read(Tchar&  c);                             // reads on char or wchar (i.e. a Tchar)
-  bool read(Byte&    v);                            // Reads one byte without interpretation of /n or /r
-  bool read(void* blk, uint n);
-
+  bool read(Byte&   v);                             // Reads one byte without interpretation of /n or /r
+  bool read(void* blk, int& n);                     // Reads up to n bytes in blk, returns true and no of
+                                                    // bytes in blk
   void setTabSize(int nSpaces)                      // Set Tab Size for output, default is 2 spaces
               {if (nSpaces > 0) tabSize = nSpaces;}
   void tab(   int nTabs);                           // Tab every 2 spaces
@@ -69,6 +71,8 @@ enum OpenParms {Read=1, Write=2, Create=4};
   void crlf() {write(_T('\n'));}
 
   Tchar* getLastError();                            // Returns last error
+
+  void   clearException();
 
 private:
 
