@@ -66,6 +66,9 @@
     <ClInclude Include="..\..\Library\Extras\RptOrientDlgOne.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Common\CSVrcdC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Library\Extras\AboutDlg.cpp">
@@ -107,6 +110,9 @@
     <ClCompile Include="..\..\Library\Extras\RptOrientDlgOne.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\CSVrcdC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Toolbar.bmp">
@@ -124,6 +130,7 @@
     <None Include="..\..\Library\Extras\RptOrientOne.rc2">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\RacesTraining.ico">

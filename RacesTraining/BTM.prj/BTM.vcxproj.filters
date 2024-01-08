@@ -33,9 +33,6 @@
     <ClInclude Include="BTMView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Library\Extras\ExtraResource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Library\Extras\OptionsDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -117,7 +114,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\README.md" />
     <None Include="res\BTM.rc2">
       <Filter>Resource Files</Filter>
     </None>

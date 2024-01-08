@@ -61,14 +61,14 @@
       <Optimization>MaxSpeed</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderFile/>
+      <PrecompiledHeaderFile />
       <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\Common\;$(SolutionDir)..\..\Library\Library.prj\;$(SolutionDir)..\..\Library\Extras\;$(SolutionDir)..\..\Library\AccessDB\;$(SolutionDir)..\..\Library\RACESdb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <BasicRuntimeChecks/>
+      <BasicRuntimeChecks />
       <FunctionLevelLinking>false</FunctionLevelLinking>
-      <PrecompiledHeaderOutputFile/>
+      <PrecompiledHeaderOutputFile />
       <LanguageStandard>stdcpp20</LanguageStandard>
       <SupportJustMyCode>false</SupportJustMyCode>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
@@ -102,7 +102,7 @@
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderFile/>
+      <PrecompiledHeaderFile />
       <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\Common\;$(SolutionDir)..\..\Library\Library.prj\;$(SolutionDir)..\..\Library\Extras\;$(SolutionDir)..\..\Library\AccessDB\;$(SolutionDir)..\..\Library\RACESdb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
@@ -110,8 +110,8 @@
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
-      <PrecompiledHeaderOutputFile/>
-      <BasicRuntimeChecks/>
+      <PrecompiledHeaderOutputFile />
+      <BasicRuntimeChecks />
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -122,7 +122,7 @@
       <AdditionalDependencies>Htmlhelp.lib</AdditionalDependencies>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <ProgramDatabaseFile/>
+      <ProgramDatabaseFile />
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -155,7 +155,7 @@
     <ClInclude Include="TrainingRcd.h" />
     <ClInclude Include="TrainingRcds.h" />
     <ClInclude Include="TrnNeeded.h" />
-  <ClInclude Include="..\Common\CSVrcdC.h" />
+    <ClInclude Include="..\Common\CSVrcdC.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Library\Extras\AboutDlg.cpp" />
@@ -171,12 +171,13 @@
     <ClCompile Include="TrainingRcd.cpp" />
     <ClCompile Include="TrainingRcds.cpp" />
     <ClCompile Include="TrnNeeded.cpp" />
-  <ClCompile Include="..\Common\CSVrcdC.cpp" />
+    <ClCompile Include="..\Common\CSVrcdC.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Library\Extras\AboutDlg.rc2" />
     <None Include="..\..\Library\Extras\Options.rc2" />
     <None Include="..\..\Library\Extras\RptOrientOne.rc2" />
+    <None Include="..\README.md" />
     <None Include="res\RacesTraining.rc2" />
     <None Include="res\Toolbar.bmp" />
   </ItemGroup>
