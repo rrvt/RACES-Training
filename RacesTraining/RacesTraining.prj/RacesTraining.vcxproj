@@ -62,7 +62,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile />
-      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\Common\;$(SolutionDir)..\..\Library\Library.prj\;$(SolutionDir)..\..\Library\Extras\;$(SolutionDir)..\..\Library\AccessDB\;$(SolutionDir)..\..\Library\RACESdb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\Common\;$(SolutionDir)..\..\Library\Library\;$(SolutionDir)..\..\Library\Extras\;$(SolutionDir)..\..\Library\AccessDB\;$(SolutionDir)..\..\Library\RACESdb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -75,10 +75,11 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>Htmlhelp.lib</AdditionalDependencies>
+      <AdditionalDependencies>Htmlhelp.lib;Library.lib;AccessDB.lib;RACESdb.lib</AdditionalDependencies>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <AdditionalLibraryDirectories>$(Solutiondir)..\..\Library\$(Configuration)\</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -103,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile />
-      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\Common\;$(SolutionDir)..\..\Library\Library.prj\;$(SolutionDir)..\..\Library\Extras\;$(SolutionDir)..\..\Library\AccessDB\;$(SolutionDir)..\..\Library\RACESdb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\Common\;$(SolutionDir)..\..\Library\Library\;$(SolutionDir)..\..\Library\Extras\;$(SolutionDir)..\..\Library\AccessDB\;$(SolutionDir)..\..\Library\RACESdb\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
       <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -119,10 +120,11 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Htmlhelp.lib</AdditionalDependencies>
+      <AdditionalDependencies>Htmlhelp.lib;Library.lib;AccessDB.lib;RACESdb.lib</AdditionalDependencies>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <ProgramDatabaseFile />
+      <AdditionalLibraryDirectories>$(Solutiondir)..\..\Library\$(Configuration)\</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -184,17 +186,6 @@
   <ItemGroup>
     <Image Include="res\RacesTraining.ico" />
     <Image Include="res\UnistallRacesTraining.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Library\AccessDB\AccessDB.vcxproj">
-      <Project>{57279f7b-d4b9-47e3-8419-cb9b97c596fa}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Library\Library.prj\Library.vcxproj">
-      <Project>{cf57f3ec-d3db-4469-8519-3f9d73785d9b}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Library\RACESdb\RACESdb.vcxproj">
-      <Project>{12084586-a769-4348-b54d-336fa036a1fb}</Project>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="RacesTraining.rc" />

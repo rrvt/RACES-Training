@@ -80,6 +80,11 @@ WixApp was used to create the installer Product file.
 
 ## Updates
 
+### Update 2/18/24
+
+Reorganized the Library so that it compiles once into Debug and Release directories under the Library
+directory.
+
 ### Update 1/8/24
 
 Library and other changes.
