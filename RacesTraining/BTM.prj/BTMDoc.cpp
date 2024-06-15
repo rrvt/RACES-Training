@@ -14,7 +14,7 @@
 #include "NotePad.h"
 #include "Resource.h"
 #include "ResourceExtra.h"
-#include "ToolBar.h"
+#include "MyToolBar.h"
 
 
 // BTMDoc

@@ -148,6 +148,7 @@
     <ClInclude Include="Database.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrame.h" />
+    <ClInclude Include="MyToolBar.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RacesTraining.h" />
     <ClInclude Include="RacesTrainingDoc.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="CSVrcds.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="MyToolBar.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="RacesTraining.cpp" />
     <ClCompile Include="RacesTrainingDoc.cpp" />

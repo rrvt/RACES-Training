@@ -3,14 +3,14 @@
 
 #pragma once
 #include "CMainFrm.h"
-#include "ToolBar.h"
+#include "MyToolBar.h"
 #include "WinPos.h"
 
 
 class MainFrame : public CMainFrm {
 
 CMFCMenuBar   m_wndMenuBar;
-ToolBar       toolBar;
+MyToolBar     toolBar;
 CMFCStatusBar m_wndStatusBar;
 CMenu         menu;
 CMenu         menu2;
@@ -29,11 +29,11 @@ public:                                             // Overrides
 
   virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 
-  virtual ~MainFrame();
+  virtual   ~MainFrame();
 
-  void setupToolBar();
+  void       setupToolBar();
 
-  ToolBar* getToolBar() {return &toolBar;}
+  MyToolBar* getToolBar() {return &toolBar;}
 
 #ifdef _DEBUG
   virtual void AssertValid() const;

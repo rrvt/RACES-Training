@@ -3,19 +3,18 @@
 
 #pragma once
 #include "CMainFrm.h"
-#include "ToolBar.h"
+#include "MyToolBar.h"
 #include "WinPos.h"
 
 
 class MainFrame : public CMainFrm {
 
 CMFCMenuBar   m_wndMenuBar;
-ToolBar       toolBar;
+MyToolBar     toolBar;
 CMFCStatusBar m_wndStatusBar;
 CMenu         menu;
 
 bool          isInitialized;
-WinPos        winPos;                               // Position of Window
 
 protected:                                          // create from serialization only
 
@@ -32,7 +31,7 @@ public:                                             // Overrides
 
   void setupToolBar();
 
-  ToolBar* getToolBar() {return &toolBar;}
+  MyToolBar* getToolBar() {return &toolBar;}
 
 #ifdef _DEBUG
   virtual void AssertValid() const;
