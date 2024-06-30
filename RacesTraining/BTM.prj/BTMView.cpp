@@ -50,8 +50,8 @@ void BTMView::onDisplayOutput() {dspNote.display(*this);}
 
 
 // The footer is injected into the printed output, so the output goes directly to the device.
-// The output streaming functions are very similar to NotePad's streaming functions so it should not
-// be a great hardship to construct a footer.
+// The output streaming functions are very similar to NotePad's streaming functions so it should
+// not be a great hardship to construct a footer.
 
 void BTMView::printFooter(DevBase& dev, int pageNo) {
   switch(doc()->dataSrc()) {
@@ -86,12 +86,8 @@ void BTMView::OnSetFocus(CWnd* pOldWnd) {
 // BTMView diagnostics
 
 #ifdef _DEBUG
-
-void BTMView::AssertValid() const {CScrollView::AssertValid();}
-
-void BTMView::Dump(CDumpContext& dc) const {CScrollView::Dump(dc);}
-                                             // non-debug version is inline
+void BTMView::AssertValid() const          {CScrollView::AssertValid();}
+void BTMView::Dump(CDumpContext& dc) const {CScrollView::Dump(dc);} // non-debug version is inline
 BTMDoc* BTMView::GetDocument() const
-  {ASSERT(m_pDocument->IsKindOf(RUNTIME_CLASS(BTMDoc))); return (BTMDoc*)m_pDocument;}
-
+               {ASSERT(m_pDocument->IsKindOf(RUNTIME_CLASS(BTMDoc))); return (BTMDoc*)m_pDocument;}
 #endif //_DEBUG

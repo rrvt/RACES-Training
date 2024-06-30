@@ -101,7 +101,8 @@ public:
   TrngIter(TrainingRcd& addrRcd) : rcd(addrRcd) { }
   TrngIter(TrngIter& iter)     : iterX(iter.iterX), rcd(iter.rcd) { }
 
-  String* operator() (Dir rev = Fwd) {iterX = rev ? rcd.nData() : 0; return rev ? decr() : current();}
+  String* operator() (Dir rev = Fwd)
+                                  {iterX = rev ? rcd.nData() : 0; return rev ? decr() : current();}
   String* operator++ (int)           {return iterX < rcd.nData() ? incr() : 0;}
   String* operator-- (int)           {return iterX > 0           ? decr() : 0;}
 

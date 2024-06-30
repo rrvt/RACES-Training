@@ -19,7 +19,7 @@ IniFile iniFile;
 // BTM
 
 BEGIN_MESSAGE_MAP(BTM, CWinAppEx)
-  ON_COMMAND(ID_App_About,        &OnAppAbout)
+  ON_COMMAND(ID_App_About, &OnAppAbout)
 END_MESSAGE_MAP()
 
 

@@ -18,6 +18,6 @@ String  s;
   notePad << nSetRTab(3) << nSetTab(4);
 
   for (i = 0, rcd = iter(); rcd; i++, rcd = iter++)
-                                                {notePad << nTab << i << nTab;    rcd->display(notePad);}
+                                          {notePad << nTab << i << nTab;    rcd->display(notePad);}
   }
 

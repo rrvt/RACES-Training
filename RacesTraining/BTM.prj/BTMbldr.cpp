@@ -13,9 +13,6 @@
 BTMbldr btmBldr;
 
 
-
-
-
 void BTMbldr::prepareFieldNames(BTMrcd& rcd) {
 BTMfld*  fld;
 int      i;
@@ -78,7 +75,8 @@ BTMfld*  d;
 
   notePad << _T("public:") << nCrlf << nCrlf;
 
-  for (d = iter(); d; d = iter++) if (d->legal) notePad << _T("String ") + d->name + _T(";") << nCrlf;
+  for (d = iter(); d; d = iter++)
+                               if (d->legal) notePad << _T("String ") + d->name + _T(";") << nCrlf;
 
   notePad << nCrlf;
   notePad << _T("  TrainingRcd& operator= (CSVrcdC& csvRcd);") << nCrlf;
@@ -95,11 +93,11 @@ BTMfld*  d;
   prepComparison(_T(">="));
   prepComparison(_T("<="));  notePad << nCrlf;
 
-  notePad << _T("// returns either a pointer to data (or datum) at index i in array or zero") << nCrlf;
-  notePad << nCrlf;
+  notePad << _T("// returns either a pointer to data (or datum) at index i in array or zero");
+  notePad << nCrlf << nCrlf;
 
-  notePad << _T("  String* datum(int i) {return 0 <= i && i < nData() ? getFld(i) : 0;}") << nCrlf;
-  notePad << nCrlf;
+  notePad << _T("  String* datum(int i) {return 0 <= i && i < nData() ? getFld(i) : 0;}");
+  notePad << nCrlf << nCrlf;
 
   notePad << _T("private:") << nCrlf << nCrlf;
 
@@ -117,7 +115,8 @@ BTMfld*  d;
 void BTMbldr::prepComparison(TCchar* op) {
 
   notePad << _T("  bool     operator") << op << _T(" (TrainingRcd& x) {return _tcsicmp(");
-  notePad << _T("callSign") << _T(", x.") << _T("callSign") << _T(") ") << op << _T(" 0;}") << nCrlf;
+  notePad << _T("callSign") << _T(", x.") << _T("callSign") << _T(") ") << op << _T(" 0;}");
+  notePad << nCrlf;
   }
 
 
@@ -144,17 +143,20 @@ void BTMbldr::prepTrngIter() {
   notePad << _T("  String* operator-- (int)           {return iterX > 0           ? decr() : 0;}");
   notePad << nCrlf << nCrlf;
 
-  notePad << _T("  String* current()                  {return rcd.getFld(iterX);}") << nCrlf << nCrlf;
+  notePad << _T("  String* current()                  {return rcd.getFld(iterX);}");
+  notePad << nCrlf << nCrlf;
 
   notePad << _T("  TrngIter& operator= (TrngIter& iter)   {iterX = iter.iterX; rcd = iter.rcd;}");
   notePad << nCrlf << nCrlf;
 
-  notePad << _T("  bool  isLast()                     {return iterX + 1 == rcd.nData();}") << nCrlf;
+  notePad << _T("  bool  isLast()                     {return iterX + 1 == rcd.nData();}");
+  notePad << nCrlf;
   notePad << _T("  bool  isFirst()                    {return iterX <= 0;}") << nCrlf << nCrlf;
 
   notePad << _T("private:") << nCrlf << nCrlf;
 
-  notePad << _T("  String* incr() {return iterX < rcd.nData() ? rcd.datum(++iterX) : 0;}") << nCrlf;
+  notePad << _T("  String* incr() {return iterX < rcd.nData() ? rcd.datum(++iterX) : 0;}");
+  notePad << nCrlf;
   notePad << _T("  String* decr() {return iterX > 0           ? rcd.datum(--iterX) : 0;}");
   notePad << nCrlf << nCrlf;
 

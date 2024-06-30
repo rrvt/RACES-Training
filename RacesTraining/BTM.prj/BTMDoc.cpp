@@ -108,15 +108,8 @@ void BTMDoc::serialize(Archive& ar) {
 // BTMDoc diagnostics
 
 #ifdef _DEBUG
-void BTMDoc::AssertValid() const
-{
-  CDocument::AssertValid();
-}
-
-void BTMDoc::Dump(CDumpContext& dc) const
-{
-  CDocument::Dump(dc);
-}
+void BTMDoc::AssertValid() const          {CDocument::AssertValid();}
+void BTMDoc::Dump(CDumpContext& dc) const {CDocument::Dump(dc);}
 #endif //_DEBUG
 
 

@@ -31,7 +31,8 @@ private:
 
   void inc(String& s, int& i);
 
-  void setMax() {int i; for (i = 0, max = 0; i < noElements(data); i++) if (data[i] > max) max = data[i];}
+  void setMax()
+        {int i; for (i = 0, max = 0; i < noElements(data); i++) if (data[i] > max) max = data[i];}
   void dspBar(int n);
   };
 

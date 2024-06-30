@@ -4,13 +4,17 @@ Path=D:\Sources\RacesTraining\RacesTraining\RacesTraining.sln
 Name=RacesTraining
 Version=2.100000
 [DefaultPath]
-NPaths=2
+NPaths=4
 DefKey0=Icon
-Icon.Path=D:\Sources\RacesTraining\RacesTraining.prj\res\
+Icon.Path=D:\Sources\Library\License\
 DefKey1=RacesTraining.ftr
 RacesTraining.ftr.Path=D:\Sources\RacesTraining\Release\
+DefKey2=License.ftr
+License.ftr.Path=D:\Sources\Library\License\
+DefKey3=License
+License.Path=D:\Sources\Library\License\
 [Icons]
-NoIcons=2
+NoIcons=3
 [Icon00]
 IconID=UnistallRacesTraining
 WixID=UnistallRacesTrainingIcon.ico
@@ -19,35 +23,45 @@ IconPath=D:\Sources\RacesTraining\RacesTraining.prj\res\UnistallRacesTraining.ic
 IconID=RacesTraining
 WixID=RacesTrainingIcon.ico
 IconPath=D:\Sources\RacesTraining\RacesTraining.prj\res\RacesTraining.ico
+[Icon02]
+IconID=MITLicense
+WixID=MITLicense_Icon.exe
+IconPath=D:\Sources\Library\License\MITLicense.ico
 [Product]
 ProductName=RacesTraining
 Company=Bob -- K6RWY
 WixName=RacesTraining
-WixVersion=1.0.11.0
+WixVersion=1.1.0.0
 UpgradeCode=EBABC970-1899-4087-9F41-371ED8EF81FF
 SaveVerAllowed=0
-LicenseRequired=0
-LicensePath=D:\Sources\RacesTraining\RacesTraining\
+LicenseRequired=1
+LicensePath=D:\Sources\Library\License\MITLicenseFile.rtf
 IconID=UnistallRacesTraining
 [PFFDirectories]
 NoDirectories=1
 [PFFDirDesc00]
 ID=RacesTraining
-WixID=RacesTraining.pff
+WixID=RACESTRAINING.PFF
 Parent=
 Name=RacesTraining
 HasChildren=0
 [PMFDirectories]
-NoDirectories=1
+NoDirectories=2
 [PMFDirDesc00]
 ID=RACES Training
 WixID=RACES_Training.pmf
 Parent=
 Name=RACES Training
 HasChildren=0
+[PMFDirDesc01]
+ID=Races Training
+WixID=Races_Training.pmf
+Parent=
+Name=Races Training
+HasChildren=0
 [Features]
-Count=1
-CurSel=RacesTraining
+Count=2
+CurSel=License
 [Ftr00]
 FeatureID=RacesTraining
 ProgramID=RacesTraining
@@ -66,3 +80,15 @@ IconID=RacesTraining
 IsStartMenu=1
 IsDeskTop=1
 IsVersionAvail=1
+[Ftr01]
+FeatureID=License
+ProgramID=RacesTraining
+StartMenuID=Races Training
+CurSel=MIT License
+NoComponents=1
+[Ftr01Cmp00]
+ID=MIT License
+Path=D:\Sources\Library\License\MITLicenseFile.rtf
+Guid=8374CBFE-1F78-4DEB-8D3E-9ACAF76A3DAA
+IconID=MITLicense
+IsStartMenu=1

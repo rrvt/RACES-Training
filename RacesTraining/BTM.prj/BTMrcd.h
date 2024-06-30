@@ -38,7 +38,7 @@ private:
 
   BTMfld* datum(int i) {return (BTMfld*) (0 <= i && i < nData() ? fields[i].p : 0);}
 
-  int     nData()      {return fields.end();}                    // returns number of data items in array
+  int     nData()      {return fields.end();}              // returns number of data items in array
 
   friend typename BRcdIter;
   };

@@ -51,12 +51,10 @@ void RacesTrainingView::onDisplayOutput() {dspNote.display(*this);}
 
 
 // The footer is injected into the printed output, so the output goes directly to the device.
-// The output streaming functions are very similar to NotePad's streaming functions so it should not
-// be a great hardship to construct a footer.
+// The output streaming functions are very similar to NotePad's streaming functions so it should
+// not be a great hardship to construct a footer.
 
-void RacesTrainingView::printFooter(DevBase& dev, int pageNo) {
-//  report.footer(dev, pageNo);
-  }
+void RacesTrainingView::printFooter(DevBase& dev, int pageNo) { }
 
 
 
@@ -64,12 +62,12 @@ void RacesTrainingView::printFooter(DevBase& dev, int pageNo) {
 // RacesTrainingView diagnostics
 
 #ifdef _DEBUG
-
-void RacesTrainingView::AssertValid() const {CScrollView::AssertValid();}
-
+void RacesTrainingView::AssertValid() const          {CScrollView::AssertValid();}
 void RacesTrainingView::Dump(CDumpContext& dc) const {CScrollView::Dump(dc);}
-                                             // non-debug version is inline
-RacesTrainingDoc* RacesTrainingView::GetDocument() const
-  {ASSERT(m_pDocument->IsKindOf(RUNTIME_CLASS(RacesTrainingDoc))); return (RacesTrainingDoc*)m_pDocument;}
+                                                                     // non-debug version is inline
+RacesTrainingDoc* RacesTrainingView::GetDocument() const {
+  ASSERT(m_pDocument->IsKindOf(RUNTIME_CLASS(RacesTrainingDoc)));
 
+  return (RacesTrainingDoc*)m_pDocument;
+  }
 #endif //_DEBUG

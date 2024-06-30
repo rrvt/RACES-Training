@@ -16,7 +16,7 @@ CSVIter iter(csvRcds);
 CSVrcd* csvRcd;
 
   for (csvRcd = iter(); csvRcd; csvRcd = iter++)
-                                            {TrainingRcd& tngRcd = data.nextData();   tngRcd = *csvRcd;}
+                                       {TrainingRcd& tngRcd = data.nextData();   tngRcd = *csvRcd;}
   }
 
 
@@ -115,9 +115,10 @@ int          tab21;
 
   notePad << nClrTabs       << nSetTab(tab0)  << nSetTab(tab1)  << nSetTab(tab2)  << nSetTab(tab3);
   notePad << nSetTab(tab4)  << nSetTab(tab5)  << nSetTab(tab6)  << nSetTab(tab7)  << nSetTab(tab8);
-  notePad << nSetTab(tab9)  << nSetTab(tab10) << nSetTab(tab11) << nSetTab(tab12) << nSetTab(tab13);
-  notePad << nSetTab(tab14) << nSetTab(tab15) << nSetTab(tab16) << nSetTab(tab17) << nSetTab(tab18);
-  notePad << nSetTab(tab19) << nSetTab(tab20) << nSetTab(tab21);
+  notePad << nSetTab(tab9)  << nSetTab(tab10) << nSetTab(tab11) << nSetTab(tab12);
+  notePad << nSetTab(tab13) << nSetTab(tab14) << nSetTab(tab15) << nSetTab(tab16);
+  notePad << nSetTab(tab17) << nSetTab(tab18) << nSetTab(tab19) << nSetTab(tab20);
+  notePad << nSetTab(tab21);
 
   notePad << _T("Call") << nTab;
   notePad << _T("First") << nTab;
@@ -297,7 +298,8 @@ String       fcc;
     if (rspdrDate.isEmpty()) {
       if (!rspdrOK && dbRspdr) {
         dsplyData(trn, status, count);
-        notePad << nTab << _T("Marked as responder in database but not eligible and not legacy") << nCrlf;
+        notePad << nTab << _T("Marked as responder in database but not eligible and not legacy");
+        notePad << nCrlf;
         }
       }
     else {
@@ -308,7 +310,8 @@ String       fcc;
         }
       if (!dbRspdr) {
         dsplyData(trn, status, count);
-        notePad << nTab << _T("Marked as Responder in training records but not marked in the database");
+        notePad << nTab;
+        notePad << _T("Marked as Responder in training records but not marked in the database");
         notePad << nCrlf;
         }
       }

@@ -15,7 +15,7 @@ CSVfld*    fld;
 int        i;
 
   for (fld = iter(), i = 0; fld; fld = iter++, i++)
-                                       {String& p = removeQuotes(fld->name);   p.trim();   setFld(i, p);}
+                                 {String& p = removeQuotes(fld->name);   p.trim();   setFld(i, p);}
   return *this;
   }
 

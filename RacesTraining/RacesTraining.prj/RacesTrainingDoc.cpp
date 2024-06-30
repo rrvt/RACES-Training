@@ -120,15 +120,8 @@ void RacesTrainingDoc::serialize(Archive& ar) {
 // RacesTrainingDoc diagnostics
 
 #ifdef _DEBUG
-void RacesTrainingDoc::AssertValid() const
-{
-  CDocument::AssertValid();
-}
-
-void RacesTrainingDoc::Dump(CDumpContext& dc) const
-{
-  CDocument::Dump(dc);
-}
+void RacesTrainingDoc::AssertValid() const          {CDocument::AssertValid();}
+void RacesTrainingDoc::Dump(CDumpContext& dc) const {CDocument::Dump(dc);}
 #endif //_DEBUG
 
 

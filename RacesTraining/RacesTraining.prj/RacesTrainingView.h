@@ -48,6 +48,6 @@ public:
 
 #ifndef _DEBUG  // debug version in RacesTrainingView.cpp
 inline RacesTrainingDoc* RacesTrainingView::GetDocument() const
-   { return reinterpret_cast<RacesTrainingDoc*>(m_pDocument); }
+                                       { return reinterpret_cast<RacesTrainingDoc*>(m_pDocument); }
 #endif
 

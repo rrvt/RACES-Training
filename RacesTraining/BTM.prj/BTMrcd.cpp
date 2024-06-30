@@ -56,15 +56,4 @@ String s;
 
 
 
-#if 0
-  name.trim();   lng = name.length();   if (!lng) return;
-
-  for (i = 0; i < lng; i++) {
-    Tchar& ch = name[i];
-
-    if (ch == _T('/')) {s += _T('_'); continue;}
-
-    if (ch != _T(' ') && ch != _T(',') && ch != _T('.') && ch != _T('-')) {s += ch; continue;}
-    }
-#endif
 

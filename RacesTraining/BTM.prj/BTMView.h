@@ -47,7 +47,6 @@ public:
 
 
 #ifndef _DEBUG  // debug version in BTMView.cpp
-inline BTMDoc* BTMView::GetDocument() const
-   { return reinterpret_cast<BTMDoc*>(m_pDocument); }
+inline BTMDoc* BTMView::GetDocument() const { return reinterpret_cast<BTMDoc*>(m_pDocument); }
 #endif
 
