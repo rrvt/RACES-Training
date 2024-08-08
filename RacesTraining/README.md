@@ -80,6 +80,10 @@ WixApp was used to create the installer Product file.
 
 ## Updates
 
+### Update 8/7/24
+
+Library update.
+
 ### Update 6/29/24
 
 Add MIT License to installation.
