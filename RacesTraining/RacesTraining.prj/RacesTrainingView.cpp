@@ -54,7 +54,7 @@ void RacesTrainingView::onDisplayOutput() {dspNote.display(*this);}
 // The output streaming functions are very similar to NotePad's streaming functions so it should
 // not be a great hardship to construct a footer.
 
-void RacesTrainingView::printFooter(DevBase& dev, int pageNo) { }
+void RacesTrainingView::printFooter(DevStream& dev, int pageNo) { }
 
 
 

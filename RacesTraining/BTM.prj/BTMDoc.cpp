@@ -93,7 +93,7 @@ void BTMDoc::serialize(Archive& ar) {
   if (ar.isStoring())
     switch(dataSource) {
       case CodeSrc    :
-      case NotePadSrc : notePad.archive(ar); return;
+      case NotePadSrc : ar << notePad; return;
       default         : return;
       }
 

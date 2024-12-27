@@ -3,7 +3,7 @@
 
 #pragma once
 #include "CScrView.h"
-#include "NotePadRpt.h"
+#include "ReportNtPd.h"
 
 
 class BTMDoc;
@@ -18,17 +18,23 @@ protected:
 
 public:
 
-  virtual ~BTMView() { }
+  virtual           ~BTMView() { }
 
-  virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+  virtual void       initNoteOrietn() { }
+  virtual void       saveNoteOrietn() { }
+  virtual void       initRptOrietn()  { }
+  virtual void       saveRptOrietn()  { }
+  virtual PrtrOrient getOrientation() {return prtNote.prtrOrietn;}
 
-  virtual void onBeginPrinting();
-  virtual void onDisplayOutput();
+  virtual BOOL       PreCreateWindow(CREATESTRUCT& cs);
 
-  virtual void printFooter(DevBase& dev, int pageNo);
-  virtual void OnEndPrinting(CDC* pDC, CPrintInfo* pInfo);
+  virtual void       onDisplayOutput();
 
-  BTMDoc* GetDocument() const;
+  virtual void       onBeginPrinting();
+  virtual void       printFooter(DevStream& dev, int pageNo);
+  virtual void       OnEndPrinting(CDC* pDC, CPrintInfo* pInfo);
+
+  BTMDoc*            GetDocument() const;
 
 public:
 

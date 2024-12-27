@@ -104,7 +104,7 @@ void RacesTrainingDoc::serialize(Archive& ar) {
   if (ar.isStoring())
     switch(dataSource) {
       case MbrSrc     :
-      case NotePadSrc : notePad.archive(ar); return;
+      case NotePadSrc : ar << notePad; return;
       case CSVSrc     :
       default         : return;
       }

@@ -3,7 +3,7 @@
 
 #pragma once
 #include "CScrView.h"
-#include "NotePadRpt.h"
+#include "ReportNtPd.h"
 
 
 class RacesTrainingDoc;
@@ -19,11 +19,17 @@ public:
 
   virtual ~RacesTrainingView() { }
 
-  virtual void onPreparePrinting(CPrintInfo* info) {prtNote.onPreparePrinting(info);}
-  virtual void onBeginPrinting();
+  virtual void       initNoteOrietn() { }
+  virtual void       saveNoteOrietn() { }
+  virtual void       initRptOrietn()  { }
+  virtual void       saveRptOrietn()  { }
+  virtual PrtrOrient getOrientation() {return prtNote.prtrOrietn;}
+
   virtual void onDisplayOutput();
 
-  virtual void printFooter(DevBase& dev, int pageNo);
+  virtual void onPreparePrinting(CPrintInfo* info) {prtNote.onPreparePrinting(info);}
+  virtual void onBeginPrinting();
+  virtual void printFooter(DevStream& dev, int pageNo);
 
   RacesTrainingDoc* GetDocument() const;
 

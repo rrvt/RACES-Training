@@ -7,7 +7,7 @@
 #include "BTMDoc.h"
 #include "OptionsDlg.h"
 #include "Resource.h"
-#include "Resources.h"
+#include "ResourceData.h"
 
 
 // BTMView
@@ -53,7 +53,7 @@ void BTMView::onDisplayOutput() {dspNote.display(*this);}
 // The output streaming functions are very similar to NotePad's streaming functions so it should
 // not be a great hardship to construct a footer.
 
-void BTMView::printFooter(DevBase& dev, int pageNo) {
+void BTMView::printFooter(DevStream& dev, int pageNo) {
   switch(doc()->dataSrc()) {
     case NotePadSrc : prtNote.prtFooter(dev, pageNo);  break;
     }
