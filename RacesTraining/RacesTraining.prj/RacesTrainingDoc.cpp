@@ -7,7 +7,7 @@
 #include "Database.h"
 #include "filename.h"
 #include "GetPathDlg.h"
-#include "IniFile.h"
+#include "IniFileEx.h"
 #include "TrainingRcds.h"
 #include "MessageBox.h"
 #include "NotePad.h"

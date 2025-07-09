@@ -145,7 +145,6 @@
     <ClInclude Include="..\..\Library\Extras\ResourceExtra.h" />
     <ClInclude Include="..\..\Library\Extras\RptOrientDlgOne.h" />
     <ClInclude Include="CSVrcds.h" />
-    <ClInclude Include="Database.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrame.h" />
     <ClInclude Include="MyToolBar.h" />
@@ -165,7 +164,6 @@
     <ClCompile Include="..\..\Library\Extras\OptionsDlg.cpp" />
     <ClCompile Include="..\..\Library\Extras\RptOrientDlgOne.cpp" />
     <ClCompile Include="CSVrcds.cpp" />
-    <ClCompile Include="Database.cpp" />
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="MyToolBar.cpp" />
     <ClCompile Include="pch.cpp" />

@@ -6,9 +6,6 @@
 #include "NotePad.h"
 
 
-BTMrcds btmRcds;
-
-
 void BTMrcds::display() {
 CSVIter iter(*this);
 BTMrcd* rcd;

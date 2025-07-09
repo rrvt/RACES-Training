@@ -5,15 +5,19 @@
 #include "BTM.h"
 #include "AboutDlg.h"
 #include "BTMDoc.h"
+#include "BTMrcds.h"
 #include "BTMView.h"
-#include "IniFile.h"
+#include "IniFileEx.h"
+#include "Labels.h"
 #include "MainFrame.h"
 #include "NotePad.h"
 #include "ResourceExtra.h"
 
 
-BTM     theApp;                         // The one and only BTM object
-IniFile iniFile;
+BTM       theApp;                         // The one and only BTM object
+IniFileEx iniFile(theApp);
+Labels    labels;
+BTMrcds   btmRcds;
 
 
 // BTM
@@ -29,7 +33,7 @@ BOOL BTM::InitInstance() {
 
   CWinAppEx::InitInstance();
 
-  iniFile.setAppDataPath(m_pszHelpFilePath, *this);
+  iniFile.setAppDataPath(m_pszHelpFilePath);
 
   notePad.clear();
 
@@ -72,14 +76,7 @@ BOOL BTM::InitInstance() {
 
 
 
-int BTM::ExitInstance() {
-
-#ifdef DebugMemoryLeaks
-  _CrtDumpMemoryLeaks();
-#endif
-
-  return CApp::ExitInstance();
-  }
+int BTM::ExitInstance() {return CApp::ExitInstance();}
 
 
 void BTM::OnHelp() {

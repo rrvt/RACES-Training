@@ -7,9 +7,6 @@
 #include "NotePad.h"
 
 
-CSVrcds csvRcds;
-
-
 void CSVrcds::display() {
 CSVIter iter(csvRcds);
 CSVrcd* rcd;

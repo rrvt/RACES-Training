@@ -8,9 +8,6 @@
 #include "TrnNeeded.h"
 
 
-TrainingRcds trainingRcds;
-
-
 void TrainingRcds::load(CSVrcds& csvRcds) {
 CSVIter iter(csvRcds);
 CSVrcd* csvRcd;

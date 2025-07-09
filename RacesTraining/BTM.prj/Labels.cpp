@@ -7,9 +7,6 @@
 #include "BTMrcds.h"
 
 
-Labels labels;
-
-
 void Labels::acquire() {
 CSVIter iter(btmRcds);
 BTMrcd* rcd;

@@ -4,8 +4,9 @@
 #include "pch.h"
 #include "RacesTraining.h"
 #include "AboutDlg.h"
+#include "CSVrcds.h"
 #include "Database.h"
-#include "IniFile.h"
+#include "IniFileEx.h"
 #include "MainFrame.h"
 #include "NotePad.h"
 #include "RacesTrainingDoc.h"
@@ -13,7 +14,18 @@
 
 
 RacesTraining theApp;                       // The one and only RacesTraining object
-IniFile       iniFile;
+IniFileEx     iniFile(theApp);
+Database      database;
+AccessDB      accessDB;
+AdrTbl        adrTbl;
+AsnTbl        asnTbl;
+CtyTbl        ctyTbl;
+EntTbl        entTbl;
+LocTbl        locTbl;
+MbrTbl        mbrTbl;
+StsTbl        stsTbl;
+CSVrcds       csvRcds;
+TrainingRcds  trainingRcds;
 
 
 // RacesTraining
@@ -30,7 +42,7 @@ BOOL RacesTraining::InitInstance() {
 
   CWinAppEx::InitInstance();
 
-  iniFile.setAppDataPath(m_pszHelpFilePath, *this);
+  iniFile.setAppDataPath(m_pszHelpFilePath);
 
   notePad.clear();
 
@@ -70,6 +82,9 @@ BOOL RacesTraining::InitInstance() {
 
   m_pMainWnd->ShowWindow(SW_SHOW);   m_pMainWnd->UpdateWindow();   return TRUE;
   }
+
+
+int RacesTraining::ExitInstance() {return CApp::ExitInstance();}
 
 
 void RacesTraining::OnHelp() {

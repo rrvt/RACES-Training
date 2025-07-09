@@ -2,6 +2,9 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+      <FullPath>D:\Sources\RacesTraining\Release\BTM.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
       <FullPath>D:\Sources\RacesTraining\Release\RacesTraining.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>

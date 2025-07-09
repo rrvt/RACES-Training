@@ -17,6 +17,7 @@ public:
                RacesTraining() noexcept : CApp(this) { }
 
   virtual BOOL InitInstance();
+  virtual int  ExitInstance();
 
           RacesTrainingDoc*  doc()  {return (RacesTrainingDoc*)  CApp::getDoc();}
           RacesTrainingView* view() {return (RacesTrainingView*) CApp::getView();}
