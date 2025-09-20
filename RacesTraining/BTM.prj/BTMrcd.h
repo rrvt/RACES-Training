@@ -36,7 +36,8 @@ private:
 
   // returns either a pointer to data (or datum) at index i in array or zero
 
-  BTMfld* datum(int i) {return (BTMfld*) (0 <= i && i < nData() ? fields[i].p : 0);}
+  BTMfld* datum(int i) {return (BTMfld*) CSVrcdC::datum(i);}
+                                        //0 <= i && i < nData() ? (BTMfld*)fields[i] : (BTMfld*)0;}
 
   int     nData()      {return fields.end();}              // returns number of data items in array
 
