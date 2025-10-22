@@ -31,7 +31,7 @@ public:
 
 extern RacesTraining theApp;
 
-inline void         invalidate() {theApp.invalidate();}
+
 inline RacesTrainingDoc*  doc()  {return theApp.doc();}
 inline RacesTrainingView* view() {return theApp.view();}
 

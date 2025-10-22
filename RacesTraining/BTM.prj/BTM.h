@@ -34,7 +34,7 @@ public:
 
 extern BTM theApp;
 
-inline void         invalidate() {theApp.invalidate();}
+
 inline BTMDoc*  doc()  {return theApp.doc();}
 inline BTMView* view() {return theApp.view();}
 
