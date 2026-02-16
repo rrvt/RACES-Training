@@ -6,37 +6,32 @@ Version=2.100000
 [DefaultPath]
 NPaths=4
 DefKey0=Icon
-Icon.Path=D:\Sources\Library\License\
+Icon.Path=D:\Sources\RacesTraining\RacesTraining.prj\res\
 DefKey1=RacesTraining.ftr
-RacesTraining.ftr.Path=D:\Sources\RacesTraining\Release\
+RacesTraining.ftr.Path=D:\Sources\RacesTraining\Release.x64\
 DefKey2=License.ftr
 License.ftr.Path=D:\Sources\Library\License\
 DefKey3=License
 License.Path=D:\Sources\Library\License\
 [Icons]
-NoIcons=3
+NoIcons=1
 [Icon00]
-IconID=UnistallRacesTraining
-WixID=UnistallRacesTrainingIcon.ico
-IconPath=D:\Sources\RacesTraining\RacesTraining.prj\res\UnistallRacesTraining.ico
-[Icon01]
 IconID=RacesTraining
-WixID=RacesTrainingIcon.ico
+WixID=RacesTraining_Icon.exe
 IconPath=D:\Sources\RacesTraining\RacesTraining.prj\res\RacesTraining.ico
-[Icon02]
-IconID=MITLicense
-WixID=MITLicense_Icon.exe
-IconPath=D:\Sources\Library\License\MITLicense.ico
 [Product]
 ProductName=RacesTraining
 Company=Bob -- K6RWY
 WixName=RacesTraining
-WixVersion=1.1.0.0
+WixVersion=1.2.0.0
 UpgradeCode=EBABC970-1899-4087-9F41-371ED8EF81FF
 SaveVerAllowed=0
 LicenseRequired=1
 LicensePath=D:\Sources\Library\License\MITLicenseFile.rtf
-IconID=UnistallRacesTraining
+IconID=RacesTraining
+IsWin10=0
+IsWin7=0
+IsWinXP=0
 [PFFDirectories]
 NoDirectories=1
 [PFFDirDesc00]
@@ -61,7 +56,7 @@ Name=Races Training
 HasChildren=0
 [Features]
 Count=2
-CurSel=License
+CurSel=RacesTraining
 [Ftr00]
 FeatureID=RacesTraining
 ProgramID=RacesTraining
@@ -70,11 +65,11 @@ CurSel=RACES Training
 NoComponents=2
 [Ftr00Cmp00]
 ID=Help
-Path=D:\Sources\RacesTraining\Release\RacesTraining.chm
+Path=D:\Sources\RacesTraining\Release.x64\RacesTraining.chm
 Guid=804932D9-38E2-4A2D-BB20-73E3FC700610
 [Ftr00Cmp01]
 ID=RACES Training
-Path=D:\Sources\RacesTraining\Release\RacesTraining.exe
+Path=D:\Sources\RacesTraining\Release.x64\RacesTraining.exe
 Guid=8E47FEF1-8332-4F81-B5C4-085790E163C0
 IconID=RacesTraining
 IsStartMenu=1
@@ -90,5 +85,5 @@ NoComponents=1
 ID=MIT License
 Path=D:\Sources\Library\License\MITLicenseFile.rtf
 Guid=8374CBFE-1F78-4DEB-8D3E-9ACAF76A3DAA
-IconID=MITLicense
+IconID=RacesTraining
 IsStartMenu=1

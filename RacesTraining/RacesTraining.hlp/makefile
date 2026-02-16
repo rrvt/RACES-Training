@@ -10,29 +10,17 @@ Clean.cln    :
   if exist RacesTraining.chm del /F RacesTraining.chm
 
 
-Release/RacesTraining.chm : RacesTraining.chm
-  copy $(MAKEDIR)\RacesTraining.chm  $(MAKEDIR)\..\Release\RacesTraining.chm
+$(TgtFolder)/RacesTraining.chm : RacesTraining.chm
+  if not exist "$(MAKEDIR)\..\$(TgtFolder)" mkdir "$(MAKEDIR)\..\$(TgtFolder)"
+  copy $(MAKEDIR)\RacesTraining.chm  $(MAKEDIR)\..\$(TgtFolder)\RacesTraining.chm
 
 
-Release/Clean.cln    : Clean.cln
-  cd $(MAKEDIR)\..\Release
+$(TgtFolder)/Clean.cln    : Clean.cln
+  cd $(MAKEDIR)\..\$(TgtFolder)
   if exist RacesTraining.chm del /F RacesTraining.chm
   cd $(MAKEDIR)
 
 
-Debug/RacesTraining.chm : RacesTraining.chm
-  copy $(MAKEDIR)\RacesTraining.chm  $(MAKEDIR)\..\Debug\RacesTraining.chm
-
-
-Debug/Clean.cln    : Clean.cln
-  cd $(MAKEDIR)\..\Debug
-  if exist RacesTraining.chm del /F RacesTraining.chm
-  cd $(MAKEDIR)
-
-
-Release/Rebuild.rbd : Release/Clean.cln Release/RacesTraining.chm
-
-
-Debug/Rebuild.rbd   : Debug/Clean.cln Debug/RacesTraining.chm
+$(TgtFolder)/Rebuild.rbd : $(TgtFolder)/Clean.cln $(TgtFolder)/RacesTraining.chm
 
 

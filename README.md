@@ -5,80 +5,48 @@
 
 ## Getting Started
 
-The application requires two elements that will be difficult to get, the San Jose Radio Amateur Civil
-Emergency Service (SJ RACES) database and the Google Trraing Spreadsheet.  If you have both of those then
-the first three toolbar commands in left to right order.  Check the help file for details.
+The application is built with Visual Studio 2022 (VS22).  It was compiled with the following
+properties:
 
-The RACES Training application is composed of four projects and compiled with Visual Studio 2017.
-The four projects are:
-  - RacesTraining -- Solution File is in the ...\RWracesDB\RWracesDB\ folder.  It references the other two
-    projects (Library and Installer)
-  - Library -- This project produces a static library of which some object files are loaded into
-    the executable and the msi (installer file)
-  - BTM -- Build Training Module, an application that constructs the TrainingRcd module by analysing the
-    Training CSV file.
-  - Installer -- A Wix Toolset Installer.  The installer was constructed with WixApp.
+  o Windows Latest SDK Version
+  o Platform Toolset: visual Studio 2022
+  o MFC: Use MFC in a Shared DLL
+  o Character Set:  Use Unicode Character Set
+  o Built for the 64 bit (x64) platform because ODBC is now only available in the x64 platform
+  o Additional Include Directories:
+    * $(ProjectDir)
+    * $(SolutionDir)..\..\Library\Library.prj\
+    * $(SolutionDir)..\..\Library\DocView\
+  o  Precompiled Header:  Not Using Precompiled Headers
+  o  Linker/Additional Dependencies:  Htmlhelp.lib
+
+The HTML Help Workshop (HHW), Version 4.74.8702.0 was used to prepare the help file (WixApp.chm).  It is
+copied into the Release directory.  I used Dreamweaver (DW) to do most of the content production of the
+help files that the HTML Help Workshop produces (i.e. HHW is used to produce the pages/files needed
+and DW is used to fill in the content).
+
+The Installer requires the Wix, HeatWave and NuGet-Tools Extensions to VS22.  WixApp (one of my
+applications, see git) was used to produce the product.wxs file.
 
 ### Prerequisites
 
-Of course this all depends on having the SJ RACES database and a CSV file from the training spreadsheet.
-
-Building the application depends on Visual Studio 2017 or later and the ability to
-debug if things don't go right.  The Extension "Wix Toolset visual Studio 2017 Extension" is also
-required.  It can be found in "Tools/Extensions and Updates".  The help file is produced with
-HTML Help Workshop (HHW), Version 4.74.8702.0.
-
-A version of the Data Access Object dynamic library must be on your system.  The library module,
-AceDao.h, contains the following lines (which you may have to change):
-```
-#import <C:\Program Files (x86)\Microsoft Office\root\Office16\ACEDAO.DLL> rename(_T("EOF"), _T("DaoEof"))
-using namespace DAO;
-```
-Here is an explanation of DAO:
-```
-  https://en.wikipedia.org/wiki/Data_access_object
-```
-
-All the code is contained in the two directories, RacesTraining and Library.
+The WiX, HeatWave, NuGet-Tools Toolsets must be installed in Visual Studio.
+The "HTML Help Workshop" (google it) must be installed.  Visual Studio 2022 or later.
 
 ### Installing
 
 Execute the msi file to install the application.  BTM is not installed, just use it from the Release
 directory.
 
-
-## Built With
-
-Slickedit is used for all edits, Visual Studio 2017 with various additions (Wix being one) is used to
-build and debug.  The old fashion Help Workshop is used to compile the help file and an old copy of
-Dreamweaver is used to construct the html files used in the Help Workshop.
-
-My current operating system is Windows 7 and I have little interest in moving to Windows 10 until it
-appears to be stable.  In April 2020 it does not appear stable.
-
-This version was created with Visual Studion 2017.  It was compiled with the following properties:
-  o Windows SDK Version: 10.0.18362.0
-  o Platfor Toolset: visual Studio 2017 (v141)
-  o MFC: Use MFC in a Shared DLL
-  o Character Set:  Use Unicode Character Set
-  o Additional Include Directories:
-    * $(ProjectDir)
-    * $(SolutionDir)..\..\Library\Library.prj\
-    * $(SolutionDir)..\Common\
-    * $(SolutionDir)..\..\Library\Extras\
-  o  Precompiled Header:  Not Using Precompiled Headers
-  o  Linker/Additional Dependencies:  Htmlhelp.lib
-
-The HTML Help Workshop (HHW), Version 4.74.8702.0 was used to prepare the help file.  It is
-copied into the Release directory.  I used Dreamweaver (DW) to do most of the content production of the
-help files that the HTML Help Workshop produces (i.e. HHW is used to produce the pages/files needed
-and DW is used to fill in the content).
-
-The WiX Toolset must be installed in Visual Studio.
-
-WixApp was used to create the installer Product file.
-
 ## Updates
+
+### Update 2/15/26
+
+Build for the 64 bit platform.  Upgraded Wix to HeatWave version 4.
+Prior to this version a Win32 platform was used since the 2010 Access Runtime supported both 32 bit
+and 64 bit drivers.  But try as I did, I could not get the 2010 32 bit Access Runtime to install on
+my laptop.  The solution was to build for the 64 bit platform and load the 2016 Access Runtime
+(64 bit).
 
 ### Update 10/21/25
 
