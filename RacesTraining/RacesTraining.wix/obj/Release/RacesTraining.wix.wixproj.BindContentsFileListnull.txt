@@ -1,0 +1,3 @@
+D:\Sources\RacesTraining\RacesTraining\..\Release\RacesTraining.chm
+D:\Sources\RacesTraining\RacesTraining\..\..\Library\License\MITLicenseFile.rtf
+D:\Sources\RacesTraining\RacesTraining\..\Release\RacesTraining.exe

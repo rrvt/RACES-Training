@@ -40,6 +40,10 @@ directory.
 
 ## Updates
 
+### Update 3/20/26
+
+Normalize MyToolbar.
+
 ### Update 2/15/26
 
 Build for the 64 bit platform.  Upgraded Wix to HeatWave version 4.

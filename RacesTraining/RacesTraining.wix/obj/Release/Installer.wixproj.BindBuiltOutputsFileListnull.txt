@@ -1,0 +1,2 @@
+D:\Sources\RacesTrainingII\Release\RacesTrainingInstaller.msi
+D:\Sources\RacesTrainingII\Release\RacesTrainingInstaller.wixpdb

@@ -1,0 +1,4 @@
+D:\Sources\RacesTraining\RacesTraining.wix\obj\x64\Release\RacesTraining.wix.wixproj.CoreCompileInputs.cache
+D:\Sources\RacesTraining\Release.x64\RacesTrainingII.msi
+D:\Sources\RacesTraining\RacesTraining.wix\obj\x64\Release\RacesTrainingII.msi
+D:\Sources\RacesTraining\RacesTraining.wix\obj\x64\Release\RacesTraining.wix.wixproj.BindTracking-neutral.txt

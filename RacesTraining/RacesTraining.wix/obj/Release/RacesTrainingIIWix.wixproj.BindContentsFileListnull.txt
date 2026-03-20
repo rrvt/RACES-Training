@@ -1,0 +1,2 @@
+D:\Sources\RacesTrainingII\RacesTrainingII\..\Release\RacesTraining.chm
+D:\Sources\RacesTrainingII\RacesTrainingII\..\Release\RacesTrainingII.exe

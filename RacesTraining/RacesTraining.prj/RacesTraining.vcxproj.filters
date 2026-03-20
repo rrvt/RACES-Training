@@ -110,9 +110,6 @@
     <ClCompile Include="..\Common\CSVrcdC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyToolBar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Toolbar.bmp">

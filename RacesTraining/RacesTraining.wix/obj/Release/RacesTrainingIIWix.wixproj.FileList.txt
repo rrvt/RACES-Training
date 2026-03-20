@@ -1,0 +1,5 @@
+D:\Sources\RacesTrainingII\Release\RacesTrainingII.msi
+obj\Release\Product.wixobj
+obj\Release\RacesTrainingIIWix.wixproj.BindContentsFileListnull.txt
+obj\Release\RacesTrainingIIWix.wixproj.BindOutputsFileListnull.txt
+obj\Release\RacesTrainingIIWix.wixproj.BindBuiltOutputsFileListnull.txt

@@ -167,7 +167,6 @@
     <ClCompile Include="BTMView.cpp" />
     <ClCompile Include="Labels.cpp" />
     <ClCompile Include="MainFrame.cpp" />
-    <ClCompile Include="MyToolBar.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="..\..\Library\Extras\OptionsDlg.cpp" />
     <ClCompile Include="..\Common\CSVrcdC.cpp" />

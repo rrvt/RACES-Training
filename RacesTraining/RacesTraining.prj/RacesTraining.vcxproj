@@ -170,7 +170,6 @@
     <ClCompile Include="..\..\Library\Extras\RptOrientDlgOne.cpp" />
     <ClCompile Include="CSVrcds.cpp" />
     <ClCompile Include="MainFrame.cpp" />
-    <ClCompile Include="MyToolBar.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="RacesTraining.cpp" />
     <ClCompile Include="RacesTrainingDoc.cpp" />

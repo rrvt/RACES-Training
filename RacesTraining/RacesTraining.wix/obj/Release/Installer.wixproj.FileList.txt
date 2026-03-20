@@ -1,0 +1,6 @@
+D:\Sources\RacesTrainingII\Release\RacesTrainingInstaller.msi
+D:\Sources\RacesTrainingII\Release\RacesTrainingInstaller.wixpdb
+obj\Release\Product.wixobj
+obj\Release\Installer.wixproj.BindContentsFileListnull.txt
+obj\Release\Installer.wixproj.BindOutputsFileListnull.txt
+obj\Release\Installer.wixproj.BindBuiltOutputsFileListnull.txt
